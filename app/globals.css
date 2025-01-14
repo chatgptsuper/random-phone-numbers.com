@@ -2,20 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  [data-theme="dark"] {
+    --background: 222.2 84% 4.9%;
+    --foreground: 0 0% 100%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* 添加平滑过渡效果，但不包括文本 */
+* {
+  transition: background-color 0.3s ease, 
+              border-color 0.3s ease,
+              transform 0.3s ease;
+}
+
+/* 主题切换按钮样式 */
+.theme-toggle-btn {
+  @apply p-2 rounded-full hover:bg-base-300/20;
+  @apply transition-all duration-300;
+}
+
+.theme-toggle-btn svg {
+  @apply w-6 h-6;
+  @apply transition-transform duration-300;
+}
+
+[data-theme='dark'] .theme-toggle-btn svg {
+  @apply rotate-180;
+}
+
+/* 按钮悬停效果 */
+.btn {
+  @apply transition-transform duration-300;
+}
+
+.btn:hover {
+  @apply transform scale-105;
+}
+
+.btn:active {
+  @apply transform scale-95;
+}
+
+/* 输入框样式 */
+.textarea, .input {
+  @apply focus:shadow-lg;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
