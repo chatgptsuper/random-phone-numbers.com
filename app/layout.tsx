@@ -32,9 +32,6 @@ export const metadata: Metadata = {
     width: 'device-width',
     initialScale: 1,
   },
-  verification: {
-    google: 'your-google-site-verification',
-  },
 }
 
 export default function RootLayout({
