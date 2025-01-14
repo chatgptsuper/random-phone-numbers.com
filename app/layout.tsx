@@ -1,6 +1,7 @@
 import './globals.css'
 import { ThemeProvider } from '../components/providers/ThemeProvider'
 import type { Metadata } from 'next'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Phone Number Generator - Free International Phone Number Generator Tool',
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     initialScale: 1,
   },
   verification: {
-    google: 'your-google-site-verification', // 需要替换为实际的验证码
+    google: 'your-google-site-verification',
   },
 }
 
@@ -45,12 +46,24 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/webico.ico" />
-        <link rel="canonical" href="https://your-domain.com" /> {/* 需要替换为实际域名 */}
+        <link rel="canonical" href="https://random-phone-numbers.com" />
       </head>
       <body className="min-h-screen bg-base-100 text-base-content transition-colors duration-300">
         <ThemeProvider>
           {children}
         </ThemeProvider>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-WRR1YQ8W48"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WRR1YQ8W48');
+          `}
+        </Script>
       </body>
     </html>
   )

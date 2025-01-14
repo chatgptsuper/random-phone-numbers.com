@@ -129,3 +129,44 @@
 ### 解决方案
 1. 删除了 CountrySelect.tsx 中未使用的 countryCode 导入
 2. 在 mainGenerator.tsx 的 useEffect 依赖数组中添加了 contentFill 和 countrySelect 
+
+## 2024-03-21 清理项目文件和解决 CSS 警告
+
+### 实现的功能
+1. 清理了项目文件结构：
+   - 删除了不需要的 creditsFooter 组件
+   - 删除了重复的 styles/global.css 文件
+   - 保留了 app/globals.css 作为主样式文件
+
+### 遇到的错误
+1. VS Code 显示 Tailwind CSS 相关警告
+2. 存在重复的样式文件
+3. 有未使用的组件文件
+
+### 解决方案
+1. 确认 Tailwind CSS 警告不影响项目运行
+2. 删除了重复的样式文件
+3. 清理了未使用的组件文件
+4. 建议安装 VS Code Tailwind CSS 插件来消除警告 
+
+## 2024-03-21 修复 Google Analytics 和水合错误
+
+### 实现的功能
+1. 优化了 Google Analytics 的集成：
+   - 使用 Next.js 的 Script 组件正确加载 GA 脚本
+   - 修复了 gtag 函数的定义
+   - 确保脚本在交互后加载
+
+2. 修复了水合错误：
+   - 移除了 layout.tsx 中的多余注释和空白字符
+   - 优化了 head 标签内的内容结构
+
+### 遇到的错误
+1. HTML 水合错误：head 标签中存在空白文本节点
+2. Google Analytics 代码集成不当
+3. dataLayer 的作用域问题
+
+### 解决方案
+1. 清理了代码中的注释和空白字符
+2. 使用 Next.js 的 Script 组件正确加载 GA
+3. 修复了 gtag 函数定义，使用 window.dataLayer 
