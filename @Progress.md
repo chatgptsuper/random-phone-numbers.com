@@ -115,3 +115,17 @@
 - 优化了主题初始化逻辑
 - 使用 localStorage 实现主题持久化
 - 添加了系统主题检测功能 
+
+## 2024-03-21 修复编译错误
+
+### 实现的功能
+1. 修复了 CountrySelect.tsx 中未使用的变量警告
+2. 修复了 mainGenerator.tsx 中 useEffect 的依赖数组问题
+
+### 遇到的错误
+1. ESLint 报错：'countryCode' 变量定义但未使用
+2. React Hook useEffect 缺少依赖项 'contentFill'
+
+### 解决方案
+1. 删除了 CountrySelect.tsx 中未使用的 countryCode 导入
+2. 在 mainGenerator.tsx 的 useEffect 依赖数组中添加了 contentFill 和 countrySelect 

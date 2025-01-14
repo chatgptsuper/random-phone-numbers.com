@@ -49,7 +49,7 @@ export default function MainGenerator() {
   useEffect(() => {
     contentFill();
     setIsCopied(false);
-  }, [numberList, withOption]);
+  }, [numberList, withOption, contentFill, countrySelect]);
 
   function contentFill() {
     const formatNumber = (num: string) => {

@@ -1,5 +1,3 @@
-import { countryCode } from "../data/countryCode";
-
 type CountrySelectProps = {
   value: string;
   onChange: (value: string) => void;
