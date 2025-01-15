@@ -1,6 +1,6 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { languages, Language, defaultLanguage } from '../config/languages'
 
@@ -34,6 +34,7 @@ const firstColumn = languageList.slice(0, 10);
 const secondColumn = languageList.slice(10);
 
 export default function LanguageSelector() {
+  const router = useRouter()
   const pathname = usePathname()
   const currentLang = pathname.split('/')[1] || defaultLanguage
 

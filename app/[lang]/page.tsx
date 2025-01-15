@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import MainGenerator from '../../components/mainGenerator'
 import MainLayout from '../../components/layouts/MainLayout'
 import { getTranslations } from '../../messages'
-import { languages, defaultLanguage } from '../../config/languages'
+import { languages, defaultLanguage, type Language } from '../../config/languages'
 
 type Props = {
   params: { lang: string }
@@ -58,7 +58,7 @@ export async function generateStaticParams() {
 }
 
 // 生成结构化数据
-function generateStructuredData(messages: Messages, lang: string) {
+function generateStructuredData(messages: any, lang: string) {
   const langInfo = languages[lang as keyof typeof languages]
   const region = langInfo?.region || 'Worldwide'
   
