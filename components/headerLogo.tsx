@@ -9,7 +9,7 @@ export default function HeaderLogo() {
         viewBox="0 0 272.03 216.41"
         aria-hidden="true"
         role="presentation"
-        title="Phone Number Generator Logo"
+        aria-label="Phone Number Generator Logo"
       >
         <desc>A stylized phone icon representing the Random Phone Number Generator tool</desc>
         <g>
