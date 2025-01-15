@@ -1,0 +1,82 @@
+import '../globals.css'
+import { ThemeProvider } from '../../components/providers/ThemeProvider'
+import { Metadata, Viewport } from 'next'
+import Script from 'next/script'
+import { languages } from '../../config/languages'
+import LanguageSelector from '../../components/LanguageSelector'
+
+export async function generateStaticParams() {
+  return Object.keys(languages).map((lang) => ({ lang }))
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+}
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://random-phone-numbers.com'),
+  title: 'Random Phone Number Generator - Free Phone Number Generator Tool',
+  description: 'Generate random phone numbers for US, UK, and worldwide. Free phone number generator tool for creating fake phone numbers and test data.',
+  keywords: 'random phone number, phone number generator, fake phone number generator, random phone numbers, phone number maker',
+  authors: [{ name: 'SirGhazian' }],
+  creator: 'SirGhazian',
+  publisher: 'SirGhazian',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  category: 'technology',
+}
+
+export default function RootLayout({
+  children,
+  params: { lang },
+}: {
+  children: React.ReactNode
+  params: { lang: string }
+}) {
+  return (
+    <html lang={lang} suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/webico.ico" />
+        <link rel="canonical" href={`https://random-phone-numbers.com${lang === 'en' ? '' : '/' + lang}`} />
+        <meta name="google-site-verification" content="your-verification-code" />
+      </head>
+      <body className="min-h-screen bg-base-100 text-base-content transition-colors duration-300">
+        <div className="fixed top-4 right-4 z-50 flex gap-2">
+          <LanguageSelector />
+        </div>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-WRR1YQ8W48"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WRR1YQ8W48');
+          `}
+        </Script>
+      </body>
+    </html>
+  )
+} 

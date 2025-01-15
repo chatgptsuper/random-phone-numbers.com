@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- English (Default) -->
+  <url>
+    <loc>https://random-phone-numbers.com</loc>
+    <lastmod>2024-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://random-phone-numbers.com"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://random-phone-numbers.com/zh"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://random-phone-numbers.com/es"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://random-phone-numbers.com/ja"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://random-phone-numbers.com/ko"/>
+    <image:image>
+      <image:loc>https://random-phone-numbers.com/og-image.png</image:loc>
+      <image:title>Phone Number Generator Tool</image:title>
+      <image:caption>Generate random phone numbers for multiple countries</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Chinese -->
+  <url>
+    <loc>https://random-phone-numbers.com/zh</loc>
+    <lastmod>2024-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://random-phone-numbers.com"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://random-phone-numbers.com/zh"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://random-phone-numbers.com/es"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://random-phone-numbers.com/ja"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://random-phone-numbers.com/ko"/>
+  </url>
+
+  <!-- Spanish -->
+  <url>
+    <loc>https://random-phone-numbers.com/es</loc>
+    <lastmod>2024-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://random-phone-numbers.com"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://random-phone-numbers.com/zh"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://random-phone-numbers.com/es"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://random-phone-numbers.com/ja"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://random-phone-numbers.com/ko"/>
+  </url>
+
+  <!-- Japanese -->
+  <url>
+    <loc>https://random-phone-numbers.com/ja</loc>
+    <lastmod>2024-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://random-phone-numbers.com"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://random-phone-numbers.com/zh"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://random-phone-numbers.com/es"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://random-phone-numbers.com/ja"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://random-phone-numbers.com/ko"/>
+  </url>
+
+  <!-- Korean -->
+  <url>
+    <loc>https://random-phone-numbers.com/ko</loc>
+    <lastmod>2024-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://random-phone-numbers.com"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://random-phone-numbers.com/zh"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://random-phone-numbers.com/es"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://random-phone-numbers.com/ja"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://random-phone-numbers.com/ko"/>
+  </url>
+</urlset> 
