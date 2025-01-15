@@ -34,7 +34,6 @@ const firstColumn = languageList.slice(0, 10);
 const secondColumn = languageList.slice(10);
 
 export default function LanguageSelector() {
-  const router = useRouter()
   const pathname = usePathname()
   const currentLang = pathname.split('/')[1] || defaultLanguage
 
