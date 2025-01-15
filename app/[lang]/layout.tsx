@@ -4,6 +4,7 @@ import { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { languages } from '../../config/languages'
 import LanguageSelector from '../../components/LanguageSelector'
+import { ReactNode } from 'react'
 
 export async function generateStaticParams() {
   return Object.keys(languages).map((lang) => ({ lang }))
@@ -58,13 +59,15 @@ export const metadata: Metadata = {
   category: 'technology',
 }
 
+type LayoutProps = {
+  children: ReactNode;
+  params: { lang: string };
+}
+
 export default function RootLayout({
   children,
   params: { lang },
-}: {
-  children: React.ReactNode
-  params: { lang: string }
-}) {
+}: LayoutProps) {
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
