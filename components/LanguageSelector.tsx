@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter, usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { languages, Language, defaultLanguage } from '../config/languages'
 

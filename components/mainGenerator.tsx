@@ -70,7 +70,7 @@ export default function MainGenerator({ messages }: Props) {
       setContent(formattedList.join(separator));
     };
     contentFill();
-  }, []);
+  }, [countrySelect, numberList, withOption.withComma, withOption.withPlus, withOption.withPrefix]);
 
   function copyText() {
     navigator.clipboard.writeText(content);

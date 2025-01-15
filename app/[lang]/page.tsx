@@ -58,7 +58,7 @@ export async function generateStaticParams() {
 }
 
 // 生成结构化数据
-function generateStructuredData(messages: any, lang: string) {
+function generateStructuredData(messages: Messages, lang: string) {
   const langInfo = languages[lang as keyof typeof languages]
   const region = langInfo?.region || 'Worldwide'
   
