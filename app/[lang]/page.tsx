@@ -2,10 +2,22 @@ import { Metadata } from 'next'
 import MainGenerator from '../../components/mainGenerator'
 import MainLayout from '../../components/layouts/MainLayout'
 import { getTranslations } from '../../messages'
-import { languages, defaultLanguage, type Language } from '../../config/languages'
+import { languages, defaultLanguage } from '../../config/languages'
 
 type Props = {
   params: { lang: string }
+}
+
+// 添加消息和结构化数据的类型定义
+type MetadataMessages = {
+  title?: string;
+  description?: string;
+  keywords?: string;
+}
+
+type StructuredDataMessages = {
+  metadata: MetadataMessages;
+  ui: Record<string, unknown>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -58,7 +70,7 @@ export async function generateStaticParams() {
 }
 
 // 生成结构化数据
-function generateStructuredData(messages: any, lang: string) {
+function generateStructuredData(messages: StructuredDataMessages, lang: string) {
   const langInfo = languages[lang as keyof typeof languages]
   const region = langInfo?.region || 'Worldwide'
   
