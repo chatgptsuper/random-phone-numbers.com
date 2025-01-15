@@ -3,7 +3,6 @@ import MainGenerator from '../../components/mainGenerator'
 import MainLayout from '../../components/layouts/MainLayout'
 import { getTranslations } from '../../messages'
 import { languages, defaultLanguage, type Language } from '../../config/languages'
-import type { Messages } from '../../messages/types'
 
 type Props = {
   params: { lang: string }
@@ -58,46 +57,9 @@ export async function generateStaticParams() {
   }))
 }
 
-interface StructuredData {
-  '@context': 'https://schema.org';
-  '@type': 'WebApplication';
-  name: string;
-  description: string;
-  applicationCategory: string;
-  operatingSystem: string;
-  url: string;
-  inLanguage: string;
-  author: {
-    '@type': 'Person';
-    name: string;
-  };
-  offers: {
-    '@type': 'Offer';
-    price: string;
-    priceCurrency: string;
-  };
-  keywords: string;
-  audience: {
-    '@type': 'Audience';
-    geographicArea: {
-      '@type': 'Country';
-      name: string;
-    };
-  };
-  potentialAction: {
-    '@type': 'UseAction';
-    actionStatus: string;
-    target: {
-      '@type': 'EntryPoint';
-      urlTemplate: string;
-      description: string;
-    };
-  };
-}
-
 // 生成结构化数据
-function generateStructuredData(messages: Messages, lang: Language): StructuredData {
-  const langInfo = languages[lang]
+function generateStructuredData(messages: any, lang: string) {
+  const langInfo = languages[lang as keyof typeof languages]
   const region = langInfo?.region || 'Worldwide'
   
   return {
@@ -118,7 +80,7 @@ function generateStructuredData(messages: Messages, lang: Language): StructuredD
       price: '0',
       priceCurrency: 'USD',
     },
-    keywords: messages.metadata.keywords || '',
+    keywords: messages.metadata.keywords,
     audience: {
       '@type': 'Audience',
       geographicArea: {
@@ -139,7 +101,7 @@ function generateStructuredData(messages: Messages, lang: Language): StructuredD
 }
 
 export default function Page({ params: { lang } }: Props) {
-  const actualLang = (lang || defaultLanguage) as Language
+  const actualLang = lang || defaultLanguage
   const messages = getTranslations(actualLang)
   
   if (!messages || !messages.ui) {

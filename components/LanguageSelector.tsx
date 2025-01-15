@@ -1,16 +1,11 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { languages, Language, defaultLanguage } from '../config/languages'
 
-interface LanguageItem {
-  code: Language;
-  label: string;
-}
-
 // 简化的语言列表（按照指定顺序排列）
-const languageList: LanguageItem[] = [
+const languageList = [
   // 第一列（优先显示的语言）
   { code: 'en-US', label: 'English' },
   { code: 'pt-BR', label: 'Português' },
@@ -32,13 +27,14 @@ const languageList: LanguageItem[] = [
   { code: 'th-TH', label: 'ไทย' },
   { code: 'vi-VN', label: 'Tiếng Việt' },
   { code: 'tr', label: 'Türkçe' },
-];
+] as const;
 
 // 将语言列表分成两列
 const firstColumn = languageList.slice(0, 10);
 const secondColumn = languageList.slice(10);
 
 export default function LanguageSelector() {
+  const router = useRouter()
   const pathname = usePathname()
   const currentLang = pathname.split('/')[1] || defaultLanguage
 
@@ -60,7 +56,7 @@ export default function LanguageSelector() {
                   href={code === defaultLanguage ? '/' : `/${code}`}
                   className={`flex items-center gap-2 py-1 ${currentLang === code ? 'active bg-base-content/10' : ''}`}
                 >
-                  <span className="text-base">{languages[code].flag}</span>
+                  <span className="text-base">{languages[code as Language].flag}</span>
                   <span className="text-sm whitespace-nowrap">{label}</span>
                 </Link>
               </li>
@@ -74,7 +70,7 @@ export default function LanguageSelector() {
                   href={code === defaultLanguage ? '/' : `/${code}`}
                   className={`flex items-center gap-2 py-1 ${currentLang === code ? 'active bg-base-content/10' : ''}`}
                 >
-                  <span className="text-base">{languages[code].flag}</span>
+                  <span className="text-base">{languages[code as Language].flag}</span>
                   <span className="text-sm whitespace-nowrap">{label}</span>
                 </Link>
               </li>

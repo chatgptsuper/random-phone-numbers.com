@@ -17,9 +17,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://random-phone-numbers.com'),
-  title: 'Random Phone Number Generator - Free Phone Number Generator Tool',
-  description: 'Generate random phone numbers for US, UK, and worldwide. Free phone number generator tool for creating fake phone numbers and test data.',
-  keywords: 'random phone number, phone number generator, fake phone number generator, random phone numbers, phone number maker',
+  title: 'Phone Number Generator - Free International Phone Number Generator Tool',
+  description: 'Generate random phone numbers for multiple countries including US, UK, China, India, and more. Perfect for testing and development purposes.',
+  keywords: 'phone number generator, random phone numbers, international phone numbers, test data generator',
   authors: [{ name: 'SirGhazian' }],
   creator: 'SirGhazian',
   publisher: 'SirGhazian',
@@ -27,6 +27,21 @@ export const metadata: Metadata = {
     email: false,
     address: false,
     telephone: false,
+  },
+  openGraph: {
+    title: 'Phone Number Generator - Free International Phone Number Generator Tool',
+    description: 'Generate random phone numbers for multiple countries including US, UK, China, India, and more.',
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'Phone Number Generator',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Phone Number Generator Tool Preview',
+      },
+    ],
   },
   robots: {
     index: true,
