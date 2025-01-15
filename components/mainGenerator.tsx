@@ -6,8 +6,13 @@ import HeaderLogo from "./headerLogo";
 import CountrySelect from "./CountrySelect";
 import OptionToggles from "./OptionToggles";
 import { countryCode } from "../data/countryCode";
+import type { Messages } from "../messages/types";
 
-export default function MainGenerator() {
+type Props = {
+  messages: Messages['ui']
+}
+
+export default function MainGenerator({ messages }: Props) {
   const [isCopied, setIsCopied] = useState(false);
   const [totalNum, setTotalNum] = useState("1");
   const [countrySelect, setCountrySelect] = useState("ID");
@@ -82,10 +87,7 @@ export default function MainGenerator() {
   }
 
   function exportToExcel() {
-    // 创建工作簿
     const wb = XLSX.utils.book_new();
-    
-    // 准备数据
     const data = numberList.map((num) => {
       let formattedNumber = num;
       if (withOption.withPrefix) {
@@ -98,83 +100,77 @@ export default function MainGenerator() {
       return [formattedNumber];
     });
 
-    // 添加表头
     data.unshift(['Phone Numbers']);
-    
-    // 创建工作表
     const ws = XLSX.utils.aoa_to_sheet(data);
-    
-    // 设置列宽
     const columnWidth = Math.max(...data.map(row => row[0].length));
     ws['!cols'] = [{ wch: columnWidth + 2 }];
-    
-    // 将工作表添加到工作簿
     XLSX.utils.book_append_sheet(wb, ws, 'Phone Numbers');
-    
-    // 生成文件名
     const fileName = `phone_numbers_${new Date().toISOString().split('T')[0]}.xlsx`;
-    
-    // 导出文件
     XLSX.writeFile(wb, fileName);
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-4">
-      <div className="bg-base-200 rounded-2xl shadow-lg border border-base-300">
-        {/* Header Section */}
-        <div className="flex flex-col items-center pt-8 pb-6 border-b border-base-300">
-          <div className="w-16 h-16 mb-4">
+    <main className="w-full max-w-2xl mx-auto px-4" role="main" aria-label="Random Phone Number Generator">
+      <article className="bg-base-200 rounded-2xl shadow-lg border border-base-300">
+        <header className="flex flex-col items-center pt-8 pb-6 border-b border-base-300">
+          <div className="w-16 h-16 mb-4" role="img" aria-label="Phone Number Generator Logo">
             <HeaderLogo />
           </div>
           <h1 className="text-xl font-semibold text-primary">
-            Phone Number Generator
+            {messages?.title || 'Random Phone Number Generator'}
           </h1>
-        </div>
+          <p className="text-sm text-base-content/70">
+            {messages?.subtitle || 'Generate random phone numbers for US, UK, and worldwide. Free phone number generator tool.'}
+          </p>
+        </header>
 
-        {/* Main Content Section */}
-        <div className="p-6 space-y-6">
-          {/* Text Area Section */}
+        <section className="p-6 space-y-6" aria-label="Phone Number Generator Tool">
           <div className="flex flex-col sm:flex-row gap-4">
             <textarea
               className="flex-1 textarea textarea-bordered min-h-[160px] text-base resize-none font-mono bg-base-100"
-              placeholder="Phone Number List Goes Here"
+              placeholder={messages?.placeholder || 'Generated random phone numbers will appear here'}
               value={content}
               readOnly
+              aria-label="Generated Phone Numbers"
             />
-            <div className="flex sm:flex-col gap-2">
+            <div className="flex sm:flex-col gap-2" role="group" aria-label="Action Buttons">
               <button
                 onClick={copyText}
                 className={`btn btn-primary ${isCopied ? 'btn-outline' : ''} flex-1 sm:flex-none justify-center`}
-                title="Copy to clipboard"
+                title={messages?.tooltips?.copy || 'Copy phone numbers to clipboard'}
+                aria-label="Copy to clipboard"
               >
-                <i className="fa-regular fa-copy text-lg" />
-                <span>Copy</span>
+                <i className="fa-regular fa-copy text-lg" aria-hidden="true" />
+                <span>{messages?.buttons?.copy || 'Copy'}</span>
               </button>
               <button
                 onClick={exportToExcel}
                 className="btn btn-primary flex-1 sm:flex-none justify-center"
-                title="Export to Excel"
+                title={messages?.tooltips?.excel || 'Export phone numbers to Excel'}
+                aria-label="Export to Excel"
                 disabled={numberList.length === 0}
               >
-                <i className="fa-regular fa-file-excel text-lg" />
-                <span>Excel</span>
+                <i className="fa-regular fa-file-excel text-lg" aria-hidden="true" />
+                <span>{messages?.buttons?.excel || 'Excel'}</span>
               </button>
             </div>
           </div>
 
-          {/* Controls Section */}
           <div className="grid gap-6">
-            {/* Country and Total Section */}
-            <div className="flex flex-col sm:flex-row gap-4 items-center">
+            <section className="flex flex-col sm:flex-row gap-4 items-center" aria-label="Generator Settings">
               <div className="w-full sm:w-2/3">
                 <CountrySelect
                   value={countrySelect}
                   onChange={setCountrySelect}
+                  aria-label="Select country for phone number format"
                 />
               </div>
               <div className="w-full sm:w-1/3 flex items-center gap-4">
-                <label className="text-base whitespace-nowrap">Total:</label>
+                <label className="text-base whitespace-nowrap" htmlFor="total-numbers">
+                  {messages?.labels?.total || 'Total Numbers:'}
+                </label>
                 <input
+                  id="total-numbers"
                   type="text"
                   placeholder="Total"
                   value={totalNum}
@@ -185,32 +181,39 @@ export default function MainGenerator() {
                     }
                   }}
                   className="input input-bordered w-full text-center bg-base-100"
+                  aria-label="Number of phone numbers to generate"
                 />
               </div>
-            </div>
+            </section>
 
-            {/* Options Section */}
-            <div className="bg-base-300/30 rounded-xl p-4">
+            <section className="bg-base-300/30 rounded-xl p-4" aria-label="Format Options">
               <OptionToggles
+                messages={messages?.labels?.options || {
+                  title: 'Phone Number Format Options',
+                  plusSymbol: 'Add Plus Symbol (+)',
+                  countryCode: 'Include Country Code',
+                  separator: 'Separate by Comma'
+                }}
                 withPlus={withOption.withPlus}
                 withPrefix={withOption.withPrefix}
                 withComma={withOption.withComma}
                 onToggle={handleOptionToggle}
               />
-            </div>
+            </section>
 
-            {/* Generate Button */}
             <button
               onClick={generateNumber}
               disabled={totalNum === "0" || totalNum === ""}
               className="btn btn-primary w-full text-lg h-14"
+              title={messages?.tooltips?.generate || 'Generate random phone numbers'}
+              aria-label="Generate random phone numbers"
             >
-              <i className="fa-solid fa-arrows-rotate text-xl mr-2" />
-              <span>Generate</span>
+              <i className="fa-solid fa-arrows-rotate text-xl mr-2" aria-hidden="true" />
+              <span>{messages?.buttons?.generate || 'Generate Random Phone Numbers'}</span>
             </button>
           </div>
-        </div>
-      </div>
-    </div>
+        </section>
+      </article>
+    </main>
   );
 }

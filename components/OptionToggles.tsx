@@ -1,11 +1,15 @@
+import type { Messages } from '../messages/types'
+
 type OptionTogglesProps = {
-  withPlus: boolean;
-  withPrefix: boolean;
-  withComma: boolean;
-  onToggle: (option: string) => void;
+  messages: Messages['ui']['labels']['options']
+  withPlus: boolean
+  withPrefix: boolean
+  withComma: boolean
+  onToggle: (option: string) => void
 }
 
 export default function OptionToggles({ 
+  messages,
   withPlus, 
   withPrefix, 
   withComma, 
@@ -14,7 +18,7 @@ export default function OptionToggles({
   return (
     <div className="grid gap-3">
       <label className="flex items-center justify-between cursor-pointer hover:bg-base-300 rounded-lg p-2 transition-colors">
-        <span className="label-text text-base">Plus Symbol (+)</span>
+        <span className="label-text text-base">{messages.plusSymbol}</span>
         <input
           type="checkbox"
           className="toggle toggle-secondary"
@@ -24,7 +28,7 @@ export default function OptionToggles({
       </label>
 
       <label className="flex items-center justify-between cursor-pointer hover:bg-base-300 rounded-lg p-2 transition-colors">
-        <span className="label-text text-base">Country Prefix Code</span>
+        <span className="label-text text-base">{messages.countryCode}</span>
         <input
           type="checkbox"
           className="toggle toggle-secondary"
@@ -34,7 +38,7 @@ export default function OptionToggles({
       </label>
 
       <label className="flex items-center justify-between cursor-pointer hover:bg-base-300 rounded-lg p-2 transition-colors">
-        <span className="label-text text-base">Separate by Comma</span>
+        <span className="label-text text-base">{messages.separator}</span>
         <input
           type="checkbox"
           className="toggle toggle-secondary"
@@ -43,5 +47,5 @@ export default function OptionToggles({
         />
       </label>
     </div>
-  );
+  )
 } 
