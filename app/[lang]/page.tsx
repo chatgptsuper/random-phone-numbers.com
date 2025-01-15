@@ -6,8 +6,10 @@ import { languages, defaultLanguage } from '../../config/languages'
 import type { Messages } from '../../messages/types'
 
 interface PageProps {
-  children?: React.ReactNode;
-  params: Promise<{ lang: string }>;
+  params: {
+    lang: string;
+  };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
