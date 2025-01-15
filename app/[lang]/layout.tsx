@@ -5,13 +5,6 @@ import Script from 'next/script'
 import { languages } from '../../config/languages'
 import LanguageSelector from '../../components/LanguageSelector'
 
-type LayoutProps = {
-  children: React.ReactNode;
-  params: {
-    lang: string;
-  };
-}
-
 export async function generateStaticParams() {
   return Object.keys(languages).map((lang) => ({ lang }))
 }
@@ -50,10 +43,13 @@ export const metadata: Metadata = {
   category: 'technology',
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
   params,
-}: LayoutProps) {
+}: {
+  children: React.ReactNode;
+  params: { lang: string };
+}) {
   const { lang } = params;
   
   return (
