@@ -5,23 +5,19 @@ import { getTranslations } from '../../messages'
 import { languages, defaultLanguage } from '../../config/languages'
 import type { Messages } from '../../messages/types'
 
-interface PageProps {
-  params: {
-    lang: string;
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
+type Props = {
+  params: { lang: string }
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const { lang } = await params;
-  const messages = getTranslations(lang || defaultLanguage);
-  const currentLang = lang || defaultLanguage;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const messages = getTranslations(params.lang || defaultLanguage)
+  const currentLang = params.lang || defaultLanguage
   
   // 构建语言替代链接
-  const languageAlternates: Record<string, string> = {};
+  const languageAlternates: Record<string, string> = {}
   Object.keys(languages).forEach((lang) => {
-    languageAlternates[lang] = `/${lang}`;
-  });
+    languageAlternates[lang] = `/${lang}`
+  })
   
   // 构建关键词列表
   const keywordsList = [
@@ -35,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     `${currentLang.includes('US') ? 'random usa phone number' : ''}`,
     `${currentLang.includes('US') ? 'fake phone number us' : ''}`,
     `${currentLang.includes('US') ? 'usa free phone number' : ''}`
-  ].filter(Boolean).join(', ');
+  ].filter(Boolean).join(', ')
   
   return {
     title: messages.metadata.title || 'Random Phone Number Generator - Free Phone Number Generator Tool',
@@ -52,20 +48,18 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       'msvalidate.01': process.env.BING_SITE_VERIFICATION || '',
       'yandex-verification': process.env.YANDEX_SITE_VERIFICATION || '',
     }
-  };
+  }
 }
 
-// 生成静态页面参数
 export async function generateStaticParams() {
   return Object.keys(languages).map((lang) => ({
     lang: lang === defaultLanguage ? '' : lang,
-  }));
+  }))
 }
 
-// 生成结构化数据
 function generateStructuredData(messages: Messages, lang: string) {
-  const langInfo = languages[lang as keyof typeof languages];
-  const region = langInfo?.region || 'Worldwide';
+  const langInfo = languages[lang as keyof typeof languages]
+  const region = langInfo?.region || 'Worldwide'
   
   return {
     '@context': 'https://schema.org',
@@ -102,17 +96,16 @@ function generateStructuredData(messages: Messages, lang: string) {
         description: `Generate random phone numbers for ${region}`
       }
     }
-  };
+  }
 }
 
-export default async function Page({ params }: PageProps) {
-  const { lang } = await params;
-  const actualLang = lang || defaultLanguage;
-  const messages = getTranslations(actualLang);
+export default async function Page({ params }: Props) {
+  const actualLang = params.lang || defaultLanguage
+  const messages = getTranslations(actualLang)
   
   if (!messages || !messages.ui) {
-    console.error('Failed to load translations for language:', actualLang);
-    const fallbackMessages = getTranslations(defaultLanguage);
+    console.error('Failed to load translations for language:', actualLang)
+    const fallbackMessages = getTranslations(defaultLanguage)
     return (
       <MainLayout>
         <div className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center">
@@ -125,7 +118,7 @@ export default async function Page({ params }: PageProps) {
           <MainGenerator messages={fallbackMessages.ui} />
         </div>
       </MainLayout>
-    );
+    )
   }
   
   return (
@@ -140,5 +133,5 @@ export default async function Page({ params }: PageProps) {
         <MainGenerator messages={messages.ui} />
       </div>
     </MainLayout>
-  );
+  )
 } 
