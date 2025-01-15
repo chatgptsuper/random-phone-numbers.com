@@ -43,19 +43,13 @@ export const metadata: Metadata = {
   category: 'technology',
 }
 
-type LayoutProps = {
-  children: React.ReactNode
-  params: {
-    lang: string
-  }
-}
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params,
-}: LayoutProps) {
-  const { lang } = params
-
+  params: { lang },
+}: {
+  children: React.ReactNode
+  params: { lang: string }
+}) {
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
