@@ -17,9 +17,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://random-phone-numbers.com'),
-  title: 'Phone Number Generator - Free International Phone Number Generator Tool',
-  description: 'Generate random phone numbers for multiple countries including US, UK, China, India, and more. Perfect for testing and development purposes.',
-  keywords: 'phone number generator, random phone numbers, international phone numbers, test data generator',
+  title: 'Random Phone Number Generator - Free Phone Number Generator Tool',
+  description: 'Generate random phone numbers for US, UK, and worldwide. Free phone number generator tool for creating fake phone numbers and test data.',
+  keywords: 'random phone number, phone number generator, fake phone number generator, random phone numbers, phone number maker',
   authors: [{ name: 'SirGhazian' }],
   creator: 'SirGhazian',
   publisher: 'SirGhazian',
@@ -45,13 +45,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params,
+  params: { lang },
 }: {
-  children: React.ReactNode;
-  params: { lang: string };
+  children: React.ReactNode
+  params: { lang: string }
 }) {
-  const { lang } = params;
-  
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
