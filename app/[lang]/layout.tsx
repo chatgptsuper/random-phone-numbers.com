@@ -28,21 +28,6 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  openGraph: {
-    title: 'Phone Number Generator - Free International Phone Number Generator Tool',
-    description: 'Generate random phone numbers for multiple countries including US, UK, China, India, and more.',
-    type: 'website',
-    locale: 'en_US',
-    siteName: 'Phone Number Generator',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Phone Number Generator Tool Preview',
-      },
-    ],
-  },
   robots: {
     index: true,
     follow: true,
@@ -58,13 +43,19 @@ export const metadata: Metadata = {
   category: 'technology',
 }
 
+type LayoutProps = {
+  children: React.ReactNode
+  params: {
+    lang: string
+  }
+}
+
 export default function RootLayout({
   children,
-  params: { lang },
-}: {
-  children: React.ReactNode
-  params: { lang: string }
-}) {
+  params,
+}: LayoutProps) {
+  const { lang } = params
+
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
