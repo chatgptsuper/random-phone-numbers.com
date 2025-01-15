@@ -4,7 +4,6 @@ import { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { languages } from '../../config/languages'
 import LanguageSelector from '../../components/LanguageSelector'
-import type { LayoutProps } from '../../.next/types/app/[lang]/layout'
 
 export async function generateStaticParams() {
   return Object.keys(languages).map((lang) => ({ lang }))
