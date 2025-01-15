@@ -5,13 +5,16 @@ import { getTranslations } from '../../messages'
 import { languages, defaultLanguage } from '../../config/languages'
 import type { Messages } from '../../messages/types'
 
+type Params = Promise<{ lang: string }>;
+
 type Props = {
-  params: { lang: string }
+  params: Params;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const messages = getTranslations(params.lang || defaultLanguage)
-  const currentLang = params.lang || defaultLanguage
+  const { lang } = await params;
+  const messages = getTranslations(lang || defaultLanguage)
+  const currentLang = lang || defaultLanguage
   
   // 构建语言替代链接
   const languageAlternates: Record<string, string> = {}
@@ -100,7 +103,8 @@ function generateStructuredData(messages: Messages, lang: string) {
 }
 
 export default async function Page({ params }: Props) {
-  const actualLang = params.lang || defaultLanguage
+  const { lang } = await params;
+  const actualLang = lang || defaultLanguage
   const messages = getTranslations(actualLang)
   
   if (!messages || !messages.ui) {
