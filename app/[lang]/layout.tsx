@@ -43,14 +43,13 @@ export const metadata: Metadata = {
   category: 'technology',
 }
 
-type PageProps = {
+export default function RootLayout({
+  children,
+  params: { lang },
+}: {
   children: React.ReactNode;
   params: { lang: string };
-}
-
-export default function RootLayout({ children, params }: PageProps) {
-  const { lang } = params;
-
+}) {
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
