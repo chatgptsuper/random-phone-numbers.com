@@ -2,19 +2,15 @@ import { Metadata } from 'next'
 import MainGenerator from '../../components/mainGenerator'
 import MainLayout from '../../components/layouts/MainLayout'
 import { getTranslations } from '../../messages'
-import { languages, defaultLanguage } from '../../config/languages'
-import type { Messages } from '../../messages/types'
-
-type Params = Promise<{ lang: string }>;
+import { languages, defaultLanguage, type Language } from '../../config/languages'
 
 type Props = {
-  params: Params;
+  params: { lang: string }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { lang } = await params;
-  const messages = getTranslations(lang || defaultLanguage)
-  const currentLang = lang || defaultLanguage
+  const messages = getTranslations(params.lang || defaultLanguage)
+  const currentLang = params.lang || defaultLanguage
   
   // 构建语言替代链接
   const languageAlternates: Record<string, string> = {}
@@ -54,13 +50,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+// 生成静态页面参数
 export async function generateStaticParams() {
   return Object.keys(languages).map((lang) => ({
     lang: lang === defaultLanguage ? '' : lang,
   }))
 }
 
-function generateStructuredData(messages: Messages, lang: string) {
+// 生成结构化数据
+function generateStructuredData(messages: any, lang: string) {
   const langInfo = languages[lang as keyof typeof languages]
   const region = langInfo?.region || 'Worldwide'
   
@@ -102,8 +100,7 @@ function generateStructuredData(messages: Messages, lang: string) {
   }
 }
 
-export default async function Page({ params }: Props) {
-  const { lang } = await params;
+export default function Page({ params: { lang } }: Props) {
   const actualLang = lang || defaultLanguage
   const messages = getTranslations(actualLang)
   
