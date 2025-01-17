@@ -12,11 +12,11 @@ export default function CountrySelect({ value, onChange, id }: CountrySelectProp
       value={value}
       onChange={(e) => onChange(e.target.value)}
     >
-      <option value="ID" className="text-base">🇮🇩 ID / +62</option>
       <option value="US" className="text-base">🇺🇸 US / +1</option>
       <option value="GB" className="text-base">🇬🇧 UK / +44</option>
       <option value="CN" className="text-base">🇨🇳 CN / +86</option>
       <option value="IN" className="text-base">🇮🇳 IN / +91</option>
+      <option value="ID" className="text-base">🇮🇩 ID / +62</option>
       <option value="MY" className="text-base">🇲🇾 MY / +60</option>
       <option value="BR" className="text-base">🇧🇷 BR / +55</option>
       <option value="DE" className="text-base">🇩🇪 DE / +49</option>
