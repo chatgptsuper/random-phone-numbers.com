@@ -17,9 +17,16 @@ export async function generateMetadata({ params: { locale } }: { params: { local
         'x-default': url,
         en: `${url}/en`,
         zh: `${url}/zh`,
-        // ... 其他语言
-      },
-    },
+        es: `${url}/es`,
+        fr: `${url}/fr`,
+        ja: `${url}/ja`,
+        de: `${url}/de`,
+        hi: `${url}/hi`,
+        id: `${url}/id`,
+        tl: `${url}/tl`,
+        pt: `${url}/pt`
+      }
+    }
   }
 }
 
