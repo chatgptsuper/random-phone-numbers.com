@@ -6,14 +6,8 @@ import HeaderLogo from "./headerLogo";
 import CountrySelect from "./CountrySelect";
 import OptionToggles from "./OptionToggles";
 import { countryCode } from "../data/countryCode";
-import type { Locale } from "../app/i18n/config";
 
-interface MainGeneratorProps {
-  locale: Locale;
-  translations: any;
-}
-
-export default function MainGenerator({ locale, translations }: MainGeneratorProps) {
+export default function MainGenerator() {
   const [isCopied, setIsCopied] = useState(false);
   const [totalNum, setTotalNum] = useState("1");
   const [countrySelect, setCountrySelect] = useState("ID");
@@ -126,24 +120,24 @@ export default function MainGenerator({ locale, translations }: MainGeneratorPro
 
   return (
     <div className="w-full max-w-2xl mx-auto px-4">
-      <div className="bg-base-200 rounded-2xl shadow-lg border border-base-300">
+      <article className="bg-base-200 rounded-2xl shadow-lg border border-base-300">
         {/* Header Section */}
-        <div className="flex flex-col items-center pt-8 pb-6 border-b border-base-300">
+        <header className="flex flex-col items-center pt-8 pb-6 border-b border-base-300">
           <div className="w-16 h-16 mb-4">
             <HeaderLogo />
           </div>
           <h1 className="text-xl font-semibold text-primary">
-            {translations.app.title}
+            Random Phone Number Generator
           </h1>
-        </div>
+        </header>
 
         {/* Main Content Section */}
-        <div className="p-6 space-y-6">
+        <section className="p-6 space-y-6">
           {/* Text Area Section */}
           <div className="flex flex-col sm:flex-row gap-4">
             <textarea
               className="flex-1 textarea textarea-bordered min-h-[160px] text-base resize-none font-mono bg-base-100"
-              placeholder={translations.app.description}
+              placeholder="Phone Number List Goes Here"
               value={content}
               readOnly
             />
@@ -151,19 +145,19 @@ export default function MainGenerator({ locale, translations }: MainGeneratorPro
               <button
                 onClick={copyText}
                 className={`btn btn-primary ${isCopied ? 'btn-outline' : ''} flex-1 sm:flex-none justify-center`}
-                title={translations.app.copy}
+                title="Copy to clipboard"
               >
                 <i className="fa-regular fa-copy text-lg" />
-                <span>{translations.app.copy}</span>
+                <span>Copy</span>
               </button>
               <button
                 onClick={exportToExcel}
                 className="btn btn-primary flex-1 sm:flex-none justify-center"
-                title={translations.app.excel}
+                title="Export to Excel"
                 disabled={numberList.length === 0}
               >
                 <i className="fa-regular fa-file-excel text-lg" />
-                <span>{translations.app.excel}</span>
+                <span>Excel</span>
               </button>
             </div>
           </div>
@@ -176,14 +170,13 @@ export default function MainGenerator({ locale, translations }: MainGeneratorPro
                 <CountrySelect
                   value={countrySelect}
                   onChange={setCountrySelect}
-                  locale={locale}
                 />
               </div>
               <div className="w-full sm:w-1/3 flex items-center gap-4">
-                <label className="text-base whitespace-nowrap">{translations.app.total}:</label>
+                <label className="text-base whitespace-nowrap">Total:</label>
                 <input
                   type="text"
-                  placeholder={translations.app.total}
+                  placeholder="Total"
                   value={totalNum}
                   onChange={(e) => {
                     const newValue = e.target.value;
@@ -203,7 +196,6 @@ export default function MainGenerator({ locale, translations }: MainGeneratorPro
                 withPrefix={withOption.withPrefix}
                 withComma={withOption.withComma}
                 onToggle={handleOptionToggle}
-                translations={translations.app.options}
               />
             </div>
 
@@ -214,11 +206,11 @@ export default function MainGenerator({ locale, translations }: MainGeneratorPro
               className="btn btn-primary w-full text-lg h-14"
             >
               <i className="fa-solid fa-arrows-rotate text-xl mr-2" />
-              <span>{translations.app.generate}</span>
+              <span>Generate</span>
             </button>
           </div>
-        </div>
-      </div>
+        </section>
+      </article>
     </div>
   );
 }

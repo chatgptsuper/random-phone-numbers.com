@@ -101,6 +101,13 @@ export default function RootLayout({
         <link rel="icon" href="/webico.ico" />
         <link rel="canonical" href="https://random-phone-numbers.com" />
         <meta name="google-site-verification" content="your-verification-code" />
+        <link 
+          rel="preload"
+          href="/fonts/your-font.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="min-h-screen bg-base-100 text-base-content transition-colors duration-300">
         <script
