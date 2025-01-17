@@ -1,0 +1,15 @@
+{
+  "app": {
+    "title": "Phone Number Generator",
+    "description": "Generate random phone numbers for different countries",
+    "total": "Total",
+    "generate": "Generate",
+    "copy": "Copy",
+    "excel": "Excel",
+    "options": {
+      "plusSymbol": "Plus Symbol (+)",
+      "countryPrefix": "Country Prefix Code",
+      "separateByComma": "Separate by Comma"
+    }
+  }
+} 

@@ -1,0 +1,19 @@
+{
+  "app": {
+    "title": "Gerador de Números de Telefone",
+    "description": "Gere números de telefone aleatórios",
+    "total": "Total",
+    "generate": "Gerar",
+    "copy": "Copiar",
+    "excel": "Excel",
+    "options": {
+      "plusSymbol": "Símbolo Mais (+)",
+      "countryPrefix": "Código do País",
+      "separateByComma": "Separar por Vírgula"
+    },
+    "meta": {
+      "keywords": "números de telefone aleatórios,gerador de números,números de telefone falsos,números para teste,ferramenta de números",
+      "description": "Gerador gratuito de números de telefone aleatórios. Suporta vários países e exportação para Excel."
+    }
+  }
+} 

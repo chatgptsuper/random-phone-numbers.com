@@ -1,0 +1,19 @@
+{
+  "app": {
+    "title": "ランダム電話番号ジェネレーター",
+    "description": "各国のランダムな電話番号を生成",
+    "total": "件数",
+    "generate": "生成",
+    "copy": "コピー",
+    "excel": "Excel",
+    "options": {
+      "plusSymbol": "プラス記号 (+)",
+      "countryPrefix": "国番号",
+      "separateByComma": "カンマ区切り"
+    },
+    "meta": {
+      "keywords": "ランダム電話番号,電話番号ジェネレーター,テスト用電話番号",
+      "description": "無料の電話番号生成ツール。複数の国に対応、一括生成やExcelエクスポートが可能。"
+    }
+  }
+} 

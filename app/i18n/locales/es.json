@@ -1,0 +1,19 @@
+{
+  "app": {
+    "title": "Generador de Números de Teléfono Aleatorios",
+    "description": "Genere números de teléfono aleatorios para diferentes países. Ideal para pruebas y desarrollo.",
+    "total": "Total",
+    "generate": "Generar",
+    "copy": "Copiar",
+    "excel": "Excel",
+    "options": {
+      "plusSymbol": "Símbolo más (+)",
+      "countryPrefix": "Código de país",
+      "separateByComma": "Separar por comas"
+    },
+    "meta": {
+      "keywords": "números de teléfono aleatorios,generador de números,números de teléfono falsos,generador de teléfonos,números para pruebas",
+      "description": "Generador gratuito de números de teléfono aleatorios. Compatible con varios países como Estados Unidos, Reino Unido, España y más. Incluye generación masiva y exportación a Excel."
+    }
+  }
+} 

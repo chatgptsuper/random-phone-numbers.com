@@ -1,44 +1,28 @@
-import type { Metadata } from 'next'
-import ThemeController from '../components/themeController'
-import MainGenerator from '../components/mainGenerator'
+import { redirect } from 'next/navigation'
+import { headers } from 'next/headers'
+import { defaultLocale, locales } from './i18n/config'
 
-export const metadata: Metadata = {
-  title: 'Phone Number Generator',
-  description: 'Generate random phone numbers for different countries',
-}
+export default function RootPage() {
+  // 获取 Accept-Language header
+  const headersList = headers()
+  const acceptLanguage = headersList.get('accept-language')
+  
+  // 解析用户偏好语言
+  let userLocale = defaultLocale
+  if (acceptLanguage) {
+    const preferredLocales = acceptLanguage.split(',')
+      .map(item => item.split(';')[0].trim().substring(0, 2))
+    
+    // 查找第一个支持的语言
+    const matchedLocale = preferredLocales.find(locale => 
+      locales.includes(locale as any)
+    )
+    
+    if (matchedLocale) {
+      userLocale = matchedLocale as typeof defaultLocale
+    }
+  }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'Phone Number Generator',
-  description: 'Generate random phone numbers for multiple countries including US, UK, China, India, and more.',
-  applicationCategory: 'DeveloperApplication',
-  operatingSystem: 'Any',
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'USD'
-  },
-  featureList: [
-    'Multiple country support',
-    'Customizable format',
-    'Bulk generation',
-    'Excel export',
-    'Copy to clipboard'
-  ]
-}
-
-export default function Home() {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <ThemeController />
-      <main className="w-screen h-screen flex flex-col items-center justify-center">
-        <MainGenerator />
-      </main>
-    </>
-  )
+  // 重定向到适当的语言版本
+  redirect(`/${userLocale}`)
 }

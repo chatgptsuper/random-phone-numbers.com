@@ -1,0 +1,19 @@
+{
+  "app": {
+    "title": "Generator Nomor Telepon",
+    "description": "Hasilkan nomor telepon acak untuk berbagai negara",
+    "total": "Total",
+    "generate": "Generate",
+    "copy": "Salin",
+    "excel": "Excel",
+    "options": {
+      "plusSymbol": "Simbol Plus (+)",
+      "countryPrefix": "Kode Negara",
+      "separateByComma": "Pisahkan dengan Koma"
+    },
+    "meta": {
+      "keywords": "nomor telepon acak,generator nomor telepon,nomor telepon palsu,nomor tes,pembuat nomor telepon",
+      "description": "Generator nomor telepon gratis. Mendukung format nomor dari berbagai negara. Fitur ekspor Excel dan pembuatan massal."
+    }
+  }
+} 

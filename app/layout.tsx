@@ -5,9 +5,20 @@ import Script from 'next/script'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://random-phone-numbers.com'),
-  title: 'Phone Number Generator - Free International Phone Number Generator Tool',
-  description: 'Generate random phone numbers for multiple countries including US, UK, China, India, and more. Perfect for testing and development purposes. Features include bulk generation, Excel export, and customizable formats.',
-  keywords: 'phone number generator, random phone numbers, international phone numbers, test data generator, development tools, bulk phone numbers, phone number format, phone number validation',
+  title: 'Random Phone Number Generator - Free Phone Number Generator Tool',
+  description: 'Generate random phone numbers for multiple countries. Create fake phone numbers for testing. Features include bulk generation, US/UK/international phone numbers, customizable formats and Excel export.',
+  keywords: [
+    'random phone numbers',
+    'phone number generator', 
+    'random phone number',
+    'fake phone number generator',
+    'phone number maker',
+    'usa phone number generator',
+    'us phone number generator',
+    'random usa phone number',
+    'fake phone number us',
+    'generate telephone number'
+  ].join(', '),
   authors: [{ name: 'SirGhazian' }],
   creator: 'SirGhazian',
   publisher: 'SirGhazian',
@@ -17,17 +28,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'Phone Number Generator - Free International Phone Number Generator Tool',
-    description: 'Generate random phone numbers for multiple countries including US, UK, China, India, and more. Features include bulk generation and Excel export.',
+    title: 'Random Phone Number Generator - Free Phone Number Generator Tool',
+    description: 'Generate random phone numbers for multiple countries. Create fake phone numbers for testing. Features include bulk generation, US/UK/international phone numbers and Excel export.',
     type: 'website',
     locale: 'en_US',
-    siteName: 'Phone Number Generator',
+    siteName: 'Random Phone Numbers',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Phone Number Generator Tool Preview',
+        alt: 'Random Phone Number Generator Tool Preview',
       },
     ],
   },
@@ -54,9 +65,9 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Phone Number Generator',
-  description: 'Generate random phone numbers for multiple countries including US, UK, China, India, and more.',
-  applicationCategory: 'DeveloperApplication',
+  name: 'Random Phone Number Generator',
+  description: 'Free tool to generate random phone numbers for multiple countries. Create fake phone numbers for testing purposes.',
+  applicationCategory: 'UtilityApplication',
   operatingSystem: 'Any',
   url: 'https://random-phone-numbers.com',
   author: {
@@ -69,12 +80,13 @@ const jsonLd = {
     priceCurrency: 'USD'
   },
   featureList: [
-    'Multiple country support',
-    'Customizable format',
-    'Bulk generation',
-    'Excel export',
-    'Copy to clipboard',
-    'Dark mode support'
+    'Generate random phone numbers for multiple countries',
+    'US, UK, China, India phone number formats',
+    'Bulk phone number generation',
+    'Customizable number formats',
+    'Excel export feature',
+    'Copy to clipboard function',
+    'Free to use'
   ]
 }
 

@@ -6,8 +6,14 @@ import HeaderLogo from "./headerLogo";
 import CountrySelect from "./CountrySelect";
 import OptionToggles from "./OptionToggles";
 import { countryCode } from "../data/countryCode";
+import type { Locale } from "../app/i18n/config";
 
-export default function MainGenerator() {
+interface MainGeneratorProps {
+  locale: Locale;
+  translations: any;
+}
+
+export default function MainGenerator({ locale, translations }: MainGeneratorProps) {
   const [isCopied, setIsCopied] = useState(false);
   const [totalNum, setTotalNum] = useState("1");
   const [countrySelect, setCountrySelect] = useState("ID");
@@ -127,7 +133,7 @@ export default function MainGenerator() {
             <HeaderLogo />
           </div>
           <h1 className="text-xl font-semibold text-primary">
-            Phone Number Generator
+            {translations.app.title}
           </h1>
         </div>
 
@@ -137,7 +143,7 @@ export default function MainGenerator() {
           <div className="flex flex-col sm:flex-row gap-4">
             <textarea
               className="flex-1 textarea textarea-bordered min-h-[160px] text-base resize-none font-mono bg-base-100"
-              placeholder="Phone Number List Goes Here"
+              placeholder={translations.app.description}
               value={content}
               readOnly
             />
@@ -145,19 +151,19 @@ export default function MainGenerator() {
               <button
                 onClick={copyText}
                 className={`btn btn-primary ${isCopied ? 'btn-outline' : ''} flex-1 sm:flex-none justify-center`}
-                title="Copy to clipboard"
+                title={translations.app.copy}
               >
                 <i className="fa-regular fa-copy text-lg" />
-                <span>Copy</span>
+                <span>{translations.app.copy}</span>
               </button>
               <button
                 onClick={exportToExcel}
                 className="btn btn-primary flex-1 sm:flex-none justify-center"
-                title="Export to Excel"
+                title={translations.app.excel}
                 disabled={numberList.length === 0}
               >
                 <i className="fa-regular fa-file-excel text-lg" />
-                <span>Excel</span>
+                <span>{translations.app.excel}</span>
               </button>
             </div>
           </div>
@@ -170,13 +176,14 @@ export default function MainGenerator() {
                 <CountrySelect
                   value={countrySelect}
                   onChange={setCountrySelect}
+                  locale={locale}
                 />
               </div>
               <div className="w-full sm:w-1/3 flex items-center gap-4">
-                <label className="text-base whitespace-nowrap">Total:</label>
+                <label className="text-base whitespace-nowrap">{translations.app.total}:</label>
                 <input
                   type="text"
-                  placeholder="Total"
+                  placeholder={translations.app.total}
                   value={totalNum}
                   onChange={(e) => {
                     const newValue = e.target.value;
@@ -196,6 +203,7 @@ export default function MainGenerator() {
                 withPrefix={withOption.withPrefix}
                 withComma={withOption.withComma}
                 onToggle={handleOptionToggle}
+                translations={translations.app.options}
               />
             </div>
 
@@ -206,7 +214,7 @@ export default function MainGenerator() {
               className="btn btn-primary w-full text-lg h-14"
             >
               <i className="fa-solid fa-arrows-rotate text-xl mr-2" />
-              <span>Generate</span>
+              <span>{translations.app.generate}</span>
             </button>
           </div>
         </div>
