@@ -57,11 +57,47 @@ export async function generateStaticParams() {
   }))
 }
 
-// 生成结构化数据
-function generateStructuredData(messages: any, lang: string) {
-  const langInfo = languages[lang as keyof typeof languages]
-  const region = langInfo?.region || 'Worldwide'
-  
+interface StructuredData {
+  '@context': string;
+  '@type': string;
+  name: string;
+  description: string;
+  applicationCategory: string;
+  operatingSystem: string;
+  url: string;
+  inLanguage: string;
+  author: {
+    '@type': string;
+    name: string;
+  };
+  offers: {
+    '@type': string;
+    price: string;
+    priceCurrency: string;
+  };
+  keywords: string;
+  audience: {
+    '@type': string;
+    geographicArea: {
+      '@type': string;
+      name: string;
+    };
+  };
+  potentialAction: {
+    '@type': string;
+    actionStatus: string;
+    target: {
+      '@type': string;
+      urlTemplate: string;
+      description: string;
+    };
+  };
+}
+
+function generateStructuredData(messages: { metadata: { title: string; description: string; keywords: string } }, lang: string): StructuredData {
+  const langInfo = languages[lang as keyof typeof languages];
+  const region = langInfo?.region || 'Worldwide';
+
   return {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
@@ -97,7 +133,7 @@ function generateStructuredData(messages: any, lang: string) {
         description: `Generate random phone numbers for ${region}`
       }
     }
-  }
+  };
 }
 
 export default function Page({ params: { lang } }: Props) {

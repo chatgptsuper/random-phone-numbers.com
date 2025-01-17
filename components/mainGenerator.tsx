@@ -52,27 +52,26 @@ export default function MainGenerator({ messages }: Props) {
   }
 
   useEffect(() => {
+    const contentFill = () => {
+      const formatNumber = (num: string) => {
+        let formattedNumber = num;
+        if (withOption.withPrefix) {
+          const prefix = countryCode[countrySelect as keyof typeof countryCode].prefix;
+          formattedNumber = prefix + formattedNumber;
+        }
+        if (withOption.withPlus) {
+          formattedNumber = `+${formattedNumber}`;
+        }
+        return formattedNumber;
+      };
+
+      const separator = withOption.withComma ? ", " : "\n";
+      const formattedList = numberList.map(formatNumber);
+      setContent(formattedList.join(separator));
+    };
     contentFill();
     setIsCopied(false);
-  }, [numberList, withOption, contentFill, countrySelect]);
-
-  function contentFill() {
-    const formatNumber = (num: string) => {
-      let formattedNumber = num;
-      if (withOption.withPrefix) {
-        const prefix = countryCode[countrySelect as keyof typeof countryCode].prefix;
-        formattedNumber = prefix + formattedNumber;
-      }
-      if (withOption.withPlus) {
-        formattedNumber = `+${formattedNumber}`;
-      }
-      return formattedNumber;
-    };
-
-    const separator = withOption.withComma ? ", " : "\n";
-    const formattedList = numberList.map(formatNumber);
-    setContent(formattedList.join(separator));
-  }
+  }, [numberList, withOption, countrySelect, totalNum]);
 
   function copyText() {
     navigator.clipboard.writeText(content);
