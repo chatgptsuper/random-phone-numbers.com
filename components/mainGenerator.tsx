@@ -119,7 +119,7 @@ export default function MainGenerator() {
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-4">
+    <div className="w-full max-w-2xl mx-auto px-4 py-8">
       <div className="bg-base-200 rounded-2xl shadow-lg border border-base-300">
         {/* Header Section - 优化标题和描述 */}
         <div className="flex flex-col items-center pt-8 pb-6 border-b border-base-300">
