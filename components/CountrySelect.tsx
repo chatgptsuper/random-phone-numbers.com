@@ -1,11 +1,13 @@
 type CountrySelectProps = {
   value: string;
   onChange: (value: string) => void;
+  id?: string;
 }
 
-export default function CountrySelect({ value, onChange }: CountrySelectProps) {
+export default function CountrySelect({ value, onChange, id }: CountrySelectProps) {
   return (
     <select
+      id={id}
       className="select select-secondary w-full text-base h-12 min-h-12"
       value={value}
       onChange={(e) => onChange(e.target.value)}

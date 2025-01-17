@@ -121,31 +121,52 @@ export default function MainGenerator() {
   return (
     <div className="w-full max-w-2xl mx-auto px-4">
       <div className="bg-base-200 rounded-2xl shadow-lg border border-base-300">
-        {/* Header Section */}
+        {/* Header Section - 优化标题和描述 */}
         <div className="flex flex-col items-center pt-8 pb-6 border-b border-base-300">
           <div className="w-16 h-16 mb-4">
             <HeaderLogo />
           </div>
-          <h1 className="text-xl font-semibold text-primary">
-            Phone Number Generator
+          <h1 className="text-2xl font-bold text-primary mb-2">
+            Random Phone Number Generator
           </h1>
+          <p className="text-center text-base-content/80 px-4">
+            Generate random phone numbers for US, UK, China and other countries. Free tool for testing and development.
+          </p>
         </div>
 
-        {/* Main Content Section */}
+        {/* Main Content Section - 添加更多描述性文本 */}
         <div className="p-6 space-y-6">
+          {/* Features Section */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+            <div className="text-center p-3 bg-base-300/30 rounded-lg">
+              <i className="fa-solid fa-globe text-xl mb-2"></i>
+              <p className="text-sm">Multiple Countries</p>
+            </div>
+            <div className="text-center p-3 bg-base-300/30 rounded-lg">
+              <i className="fa-solid fa-file-excel text-xl mb-2"></i>
+              <p className="text-sm">Excel Export</p>
+            </div>
+            <div className="text-center p-3 bg-base-300/30 rounded-lg">
+              <i className="fa-solid fa-copy text-xl mb-2"></i>
+              <p className="text-sm">Copy to Clipboard</p>
+            </div>
+          </div>
+
           {/* Text Area Section */}
           <div className="flex flex-col sm:flex-row gap-4">
             <textarea
               className="flex-1 textarea textarea-bordered min-h-[160px] text-base resize-none font-mono bg-base-100"
-              placeholder="Phone Number List Goes Here"
+              placeholder="Generated phone numbers will appear here..."
               value={content}
               readOnly
+              aria-label="Generated phone numbers"
             />
             <div className="flex sm:flex-col gap-2">
               <button
                 onClick={copyText}
                 className={`btn btn-primary ${isCopied ? 'btn-outline' : ''} flex-1 sm:flex-none justify-center`}
-                title="Copy to clipboard"
+                title="Copy numbers to clipboard"
+                aria-label="Copy to clipboard"
               >
                 <i className="fa-regular fa-copy text-lg" />
                 <span>Copy</span>
@@ -153,7 +174,8 @@ export default function MainGenerator() {
               <button
                 onClick={exportToExcel}
                 className="btn btn-primary flex-1 sm:flex-none justify-center"
-                title="Export to Excel"
+                title="Export numbers to Excel"
+                aria-label="Export to Excel"
                 disabled={numberList.length === 0}
               >
                 <i className="fa-regular fa-file-excel text-lg" />
@@ -162,21 +184,27 @@ export default function MainGenerator() {
             </div>
           </div>
 
-          {/* Controls Section */}
+          {/* Controls Section - 添加更清晰的标签 */}
           <div className="grid gap-6">
-            {/* Country and Total Section */}
             <div className="flex flex-col sm:flex-row gap-4 items-center">
               <div className="w-full sm:w-2/3">
+                <label className="block text-sm mb-2" htmlFor="country-select">
+                  Select Country
+                </label>
                 <CountrySelect
                   value={countrySelect}
                   onChange={setCountrySelect}
+                  id="country-select"
                 />
               </div>
-              <div className="w-full sm:w-1/3 flex items-center gap-4">
-                <label className="text-base whitespace-nowrap">Total:</label>
+              <div className="w-full sm:w-1/3">
+                <label className="block text-sm mb-2" htmlFor="total-input">
+                  Number of Phone Numbers
+                </label>
                 <input
+                  id="total-input"
                   type="text"
-                  placeholder="Total"
+                  placeholder="Enter quantity"
                   value={totalNum}
                   onChange={(e) => {
                     const newValue = e.target.value;
@@ -185,12 +213,14 @@ export default function MainGenerator() {
                     }
                   }}
                   className="input input-bordered w-full text-center bg-base-100"
+                  aria-label="Total numbers to generate"
                 />
               </div>
             </div>
 
             {/* Options Section */}
             <div className="bg-base-300/30 rounded-xl p-4">
+              <h2 className="text-lg font-semibold mb-3">Format Options</h2>
               <OptionToggles
                 withPlus={withOption.withPlus}
                 withPrefix={withOption.withPrefix}
@@ -204,9 +234,10 @@ export default function MainGenerator() {
               onClick={generateNumber}
               disabled={totalNum === "0" || totalNum === ""}
               className="btn btn-primary w-full text-lg h-14"
+              aria-label="Generate phone numbers"
             >
               <i className="fa-solid fa-arrows-rotate text-xl mr-2" />
-              <span>Generate</span>
+              <span>Generate Random Numbers</span>
             </button>
           </div>
         </div>
