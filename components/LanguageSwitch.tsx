@@ -1,30 +1,29 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
-import { usePathname } from 'next/navigation'
-import { localeNames, Locale } from '../app/i18n/config'
-import { saveLanguagePreference } from '../app/i18n/utils'
+import { usePathname, useRouter } from 'next/navigation'
+import { locales, localeNames, defaultLocale } from '../app/i18n/config'
 
 export default function LanguageSwitch() {
+  const pathname = usePathname() || ''
   const router = useRouter()
-  const pathname = usePathname()
-  const currentLocale = pathname.split('/')[1] as Locale
-  
-  const handleLanguageChange = (newLocale: Locale) => {
-    saveLanguagePreference(newLocale)
-    const newPath = pathname.replace(`/${currentLocale}`, `/${newLocale}`)
-    router.push(newPath)
+
+  const handleLanguageChange = (newLocale: string) => {
+    const segments = pathname.split('/')
+    const currentPath = segments.length > 2 ? segments.slice(2).join('/') : ''
+    router.push(`/${newLocale}/${currentPath}`)
   }
-  
+
+  const currentLocale = pathname.split('/')[1] || defaultLocale
+
   return (
     <select 
+      onChange={(e) => handleLanguageChange(e.target.value)}
+      className="select select-bordered select-sm"
       value={currentLocale}
-      onChange={(e) => handleLanguageChange(e.target.value as Locale)}
-      className="select select-sm select-bordered"
     >
-      {Object.entries(localeNames).map(([code, name]) => (
-        <option key={code} value={code}>
-          {name}
+      {locales.map((locale) => (
+        <option key={locale} value={locale}>
+          {localeNames[locale]}
         </option>
       ))}
     </select>
