@@ -5,15 +5,13 @@ import Script from 'next/script'
 import { localeMetadata } from '../i18n/config'
 import type { Locale } from '../i18n/config'
 
-// 定义布局组件的 props 类型
-interface LayoutProps {
+// 使用 Next.js 内置的类型
+type Props = {
   children: React.ReactNode
-  params: {
-    locale: Locale
-  }
+  params: { locale: Locale }
 }
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Promise<Metadata> {
+export async function generateMetadata({ params: { locale } }: Props): Promise<Metadata> {
   const meta = localeMetadata[locale]
   const url = 'https://random-phone-numbers.com'
   
@@ -38,11 +36,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   }
 }
 
-// 使用正确的类型注解
-export default function LocaleLayout({
-  children,
-  params: { locale }
-}: LayoutProps) {
+export default function LocaleLayout({ children, params: { locale } }: Props) {
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
