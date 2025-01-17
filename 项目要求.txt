@@ -1,0 +1,25 @@
+本项目是要基于nextjs制作一个核心关键词为random phone numbers的网站
+网站功能：选择国家，生成对应国家的随机手机号，可以自定义数量，是否添加+号、国家号、逗号间隔（已经实现）
+其它关键词：（可能对seo有帮助,是否使用以及使用多少需要你依据seo实际需要进行判断）
+random phone number
+phone number generator
+phone number maker
+fake phone number generator
+phont number creator
+phone number gen
+generate telephone number
+random number phone number
+fake phone number us
+fake phone number
+usa free phone number
+usa phone number generator
+random number phone generator
+random usa phone number
+us phone number generator
+
+要求：
+项目将部署到vercel上，你需要注意语法问题，你需要时刻铭记这一点，确保代码可以成功部署而不会产生编译错误
+基于seo，有良好的seo优化
+实现完全的服务端渲染，整个网页风格统一
+实现多语言支持
+实现上面的要求就可以了，不需要太复杂的功能，快速产出产品mvp
