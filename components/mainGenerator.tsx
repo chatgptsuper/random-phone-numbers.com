@@ -1,12 +1,13 @@
 'use client'
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import * as XLSX from 'xlsx';
 import HeaderLogo from "./headerLogo";
 import CountrySelect from "./CountrySelect";
 import OptionToggles from "./OptionToggles";
 import { countryCode } from "../data/countryCode";
 import type { Locale } from "../app/i18n/config";
+import type { CountryCode } from '../types/country'
 
 interface MainGeneratorProps {
   locale: Locale;
@@ -24,6 +25,29 @@ export default function MainGenerator({ locale, translations }: MainGeneratorPro
     withPrefix: true,
     withComma: false,
   });
+
+  const contentFill = useCallback(() => {
+    const formatNumber = (num: string) => {
+      let formattedNumber = num;
+      if (withOption.withPrefix) {
+        const prefix = countryCode[countrySelect as keyof typeof countryCode].prefix;
+        formattedNumber = prefix + formattedNumber;
+      }
+      if (withOption.withPlus) {
+        formattedNumber = `+${formattedNumber}`;
+      }
+      return formattedNumber;
+    };
+
+    const separator = withOption.withComma ? ", " : "\n";
+    const formattedList = numberList.map(formatNumber);
+    setContent(formattedList.join(separator));
+  }, [numberList, withOption, countrySelect]);
+
+  useEffect(() => {
+    contentFill();
+    setIsCopied(false);
+  }, [contentFill]);
 
   function generateNumber() {
     setIsCopied(false);
@@ -50,29 +74,6 @@ export default function MainGenerator({ locale, translations }: MainGeneratorPro
 
       setNumberList(tmpNumberList);
     }
-  }
-
-  useEffect(() => {
-    contentFill();
-    setIsCopied(false);
-  }, [numberList, withOption, contentFill, countrySelect]);
-
-  function contentFill() {
-    const formatNumber = (num: string) => {
-      let formattedNumber = num;
-      if (withOption.withPrefix) {
-        const prefix = countryCode[countrySelect as keyof typeof countryCode].prefix;
-        formattedNumber = prefix + formattedNumber;
-      }
-      if (withOption.withPlus) {
-        formattedNumber = `+${formattedNumber}`;
-      }
-      return formattedNumber;
-    };
-
-    const separator = withOption.withComma ? ", " : "\n";
-    const formattedList = numberList.map(formatNumber);
-    setContent(formattedList.join(separator));
   }
 
   function copyText() {
@@ -122,6 +123,10 @@ export default function MainGenerator({ locale, translations }: MainGeneratorPro
     
     // 导出文件
     XLSX.writeFile(wb, fileName);
+  }
+
+  const handleGenerateClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    // ... 处理逻辑
   }
 
   return (

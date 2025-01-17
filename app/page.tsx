@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 import { headers } from 'next/headers'
-import { defaultLocale, locales } from './i18n/config'
+import { defaultLocale, locales, Locale } from './i18n/config'
 
 export default function RootPage() {
   // 获取 Accept-Language header
@@ -15,11 +15,11 @@ export default function RootPage() {
     
     // 查找第一个支持的语言
     const matchedLocale = preferredLocales.find(locale => 
-      locales.includes(locale as any)
+      locales.includes(locale as Locale)
     )
     
     if (matchedLocale) {
-      userLocale = matchedLocale as typeof defaultLocale
+      userLocale = matchedLocale as Locale
     }
   }
 

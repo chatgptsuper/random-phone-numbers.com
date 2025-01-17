@@ -2,7 +2,7 @@ import '../globals.css'
 import { ThemeProvider } from '../../components/providers/ThemeProvider'
 import type { Metadata } from 'next'
 import Script from 'next/script'
-import { localeMetadata, locales } from '../i18n/config'
+import { localeMetadata } from '../i18n/config'
 import type { Locale } from '../i18n/config'
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Promise<Metadata> {
