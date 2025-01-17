@@ -7,7 +7,6 @@ import CountrySelect from "./CountrySelect";
 import OptionToggles from "./OptionToggles";
 import { countryCode } from "../data/countryCode";
 import type { Locale } from "../app/i18n/config";
-import type { CountryCode } from '../types/country'
 
 interface MainGeneratorProps {
   locale: Locale;
@@ -125,8 +124,31 @@ export default function MainGenerator({ locale, translations }: MainGeneratorPro
     XLSX.writeFile(wb, fileName);
   }
 
-  const handleGenerateClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    // ... 处理逻辑
+  const handleGenerateClick = () => {
+    const totalNum = document.getElementById('totalNum') as HTMLInputElement
+    if (totalNum && totalNum.value) {
+      const tmpNumberList = []
+      setNumberList([''])
+
+      const tmpSuffix = countryCode[countrySelect as keyof typeof countryCode].suffix
+      const tmpPrefix = countryCode[countrySelect as keyof typeof countryCode].prefix
+      const tmpLength = countryCode[countrySelect as keyof typeof countryCode].length
+      const lastDigits = tmpLength - tmpPrefix.length - tmpSuffix[0].length
+
+      for (let j = 0; j < Number(totalNum.value); j++) {
+        let newNumber = ''
+        const suffixIndex = Math.floor(Math.random() * tmpSuffix.length)
+        newNumber += tmpSuffix[suffixIndex]
+
+        for (let i = 0; i < lastDigits; i++) {
+          newNumber += Math.floor(Math.random() * 10)
+        }
+
+        tmpNumberList.push(newNumber)
+      }
+
+      setNumberList(tmpNumberList)
+    }
   }
 
   return (
