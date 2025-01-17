@@ -1,11 +1,32 @@
 import { createTranslator } from 'next-intl'
 import { Locale, defaultLocale, locales } from './config'
 
-export async function getTranslations(locale: Locale) {
-  return (await import(`./locales/${locale}.json`)).default
+// 定义翻译消息的类型接口
+interface TranslationMessages {
+  app: {
+    title: string
+    description: string
+    total: string
+    generate: string
+    copy: string
+    excel: string
+    options: {
+      plusSymbol: string
+      countryPrefix: string
+      separateByComma: string
+    }
+    meta: {
+      keywords: string
+      description: string
+    }
+  }
 }
 
-export function getTranslator(messages: any, locale: Locale) {
+export async function getTranslations(locale: Locale) {
+  return (await import(`./locales/${locale}.json`)).default as TranslationMessages
+}
+
+export function getTranslator(messages: TranslationMessages, locale: Locale) {
   return createTranslator({ locale, messages })
 }
 
