@@ -120,19 +120,19 @@ export default function MainGenerator() {
 
   return (
     <div className="w-full max-w-2xl mx-auto px-4">
-      <article className="bg-base-200 rounded-2xl shadow-lg border border-base-300">
+      <div className="bg-base-200 rounded-2xl shadow-lg border border-base-300">
         {/* Header Section */}
-        <header className="flex flex-col items-center pt-8 pb-6 border-b border-base-300">
+        <div className="flex flex-col items-center pt-8 pb-6 border-b border-base-300">
           <div className="w-16 h-16 mb-4">
             <HeaderLogo />
           </div>
           <h1 className="text-xl font-semibold text-primary">
-            Random Phone Number Generator
+            Phone Number Generator
           </h1>
-        </header>
+        </div>
 
         {/* Main Content Section */}
-        <section className="p-6 space-y-6">
+        <div className="p-6 space-y-6">
           {/* Text Area Section */}
           <div className="flex flex-col sm:flex-row gap-4">
             <textarea
@@ -209,8 +209,8 @@ export default function MainGenerator() {
               <span>Generate</span>
             </button>
           </div>
-        </section>
-      </article>
+        </div>
+      </div>
     </div>
   );
 }
