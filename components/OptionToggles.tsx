@@ -1,3 +1,5 @@
+// 选项切换组件，用于控制生成器选项，允许用户自定义电话号码的格式选项。提供切换按钮或开关
+
 type OptionTogglesProps = {
   withPlus: boolean;
   withPrefix: boolean;

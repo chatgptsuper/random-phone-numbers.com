@@ -1,6 +1,4 @@
-// 这个组件可以是服务端组件，因为：
-// 1. 只渲染静态 SVG
-// 2. 不包含任何交互逻辑或状态
+// 头部Logo组件，显示一个SVG图标
 export default function HeaderLogo() {
   return (
     <>

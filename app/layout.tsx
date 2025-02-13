@@ -1,11 +1,18 @@
+// 定义整个app的布局，包括主题切换、Google Analytics、页面元数据等
+
 import './globals.css'
-import { ThemeProvider } from '../components/providers/ThemeProvider'
-import type { Metadata } from 'next'
-import Script from 'next/script'
+import { ThemeProvider } from '../components/providers/ThemeProvider' // 引入ThemeProvider组件，用于设置主题切换功能
+import type { Metadata } from 'next' // 引入Metadata组件，用于设置页面元数据
+import Script from 'next/script' // 引入Script组件，用于在页面中插入Google Analytics脚本
+import { Inter } from 'next/font/google'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://random-phone-numbers.com'),
-  title: 'Random Phone Number Generator - Free Phone Number Generator Tool',
+  title: 'Random Phone Numbers Generator - Free Phone Number Generator Tool',
   description: 'Generate random phone numbers for multiple countries. Create fake phone numbers for testing. Features include bulk generation, US/UK/international phone numbers, customizable formats and Excel export.',
   keywords: [
     'random phone numbers',
@@ -19,16 +26,16 @@ export const metadata: Metadata = {
     'fake phone number us',
     'generate telephone number'
   ].join(', '),
-  authors: [{ name: 'SirGhazian' }],
-  creator: 'SirGhazian',
-  publisher: 'SirGhazian',
+  authors: [{ name: 'Ethan Ye' }],
+  creator: 'Ethan Ye',
+  publisher: 'Ethan Ye',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: 'Random Phone Number Generator - Free Phone Number Generator Tool',
+    title: 'Random Phone Numbers Generator - Free Phone Number Generator Tool',
     description: 'Generate random phone numbers for multiple countries. Create fake phone numbers for testing. Features include bulk generation, US/UK/international phone numbers and Excel export.',
     type: 'website',
     locale: 'en_US',
@@ -62,7 +69,7 @@ export const metadata: Metadata = {
   category: 'technology',
 }
 
-const jsonLd = {
+const jsonLd = { // 作用是提供给搜索引擎的结构化数据，帮助搜索引擎更好地理解网页内容
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'Random Phone Number Generator',
@@ -95,20 +102,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // suppressHydrationWarning 是防止在SSR过程中出现警告
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning data-theme="light">
       <head>
         <link rel="icon" href="/webico.ico" />
         <link rel="canonical" href="https://random-phone-numbers.com" />
-        <meta name="google-site-verification" content="your-verification-code" />
       </head>
-      <body className="min-h-screen bg-base-100 text-base-content transition-colors duration-300">
+      <body className={`min-h-screen bg-base-100 text-base-content transition-colors duration-300 ${inter.className}`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <ThemeProvider>
+          <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-WRR1YQ8W48"

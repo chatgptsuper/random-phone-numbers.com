@@ -1,6 +1,12 @@
+// 主题提供者组件，用于管理应用的主题状态（light/dark），并提供主题切换功能
+
 'use client'
 
 import { createContext, useContext, useState, useEffect } from 'react'
+// createContext:用于创建一个上下文对象，用于在组件中共享状态
+// useContext:用于在组件中访问上下文对象，获取上下文中的状态
+// useState:用于管理组件的状态，比如设置和更新主题
+// useEffect:用于管理组件的生命周期，处理副作用，比如获取数据、订阅、手动更新DOM等
 
 type Theme = 'light' | 'dark';
 
