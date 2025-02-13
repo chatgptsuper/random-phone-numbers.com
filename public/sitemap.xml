@@ -1,19 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 主页 -->
   <url>
-    <loc>https://random-phone-numbers.com/</loc>
-    <lastmod>2024-03-21</lastmod>
+    <loc>https://random-phone-numbers.com</loc>
+    <lastmod>2025-02-14</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- 国家生成器页面 -->
   <url>
     <loc>https://random-phone-numbers.com/phone-number-generator/us</loc>
-    <lastmod>2024-03-21</lastmod>
+    <lastmod>2025-02-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://random-phone-numbers.com/phone-number-generator/uk</loc>
-    <lastmod>2024-03-21</lastmod>
+    <lastmod>2025-02-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  <!-- 添加其他国家页面 -->
+  <url>
+    <loc>https://random-phone-numbers.com/phone-number-generator/cn</loc>
+    <lastmod>2025-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://random-phone-numbers.com/phone-number-generator/in</loc>
+    <lastmod>2025-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://random-phone-numbers.com/phone-number-generator/jp</loc>
+    <lastmod>2025-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://random-phone-numbers.com/phone-number-generator/sg</loc>
+    <lastmod>2025-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://random-phone-numbers.com/phone-number-generator/my</loc>
+    <lastmod>2025-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://random-phone-numbers.com/phone-number-generator/ph</loc>
+    <lastmod>2025-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 其他页面 -->
+  <url>
+    <loc>https://random-phone-numbers.com/about</loc>
+    <lastmod>2025-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://random-phone-numbers.com/privacy</loc>
+    <lastmod>2025-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://random-phone-numbers.com/terms</loc>
+    <lastmod>2025-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://random-phone-numbers.com/contact</loc>
+    <lastmod>2025-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset> 
