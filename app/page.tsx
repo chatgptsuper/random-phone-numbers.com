@@ -20,6 +20,12 @@ const popularCountries = [
     format: '+44 XXXX XXXXXX'
   },
   {
+    code: 'gh',
+    name: 'Ghana',
+    flag: '🇬🇭',
+    format: '+233 XX XXX XXXX'
+  },
+  {
     code: 'cn',
     name: 'China',
     flag: '🇨🇳',
@@ -38,10 +44,34 @@ const popularCountries = [
     format: '+81 XX XXXX XXXX'
   },
   {
+    code: 'ng',
+    name: 'Nigeria',
+    flag: '🇳🇬',
+    format: '+234 XXX XXX XXXX'
+  },
+  {
     code: 'sg',
     name: 'Singapore',
     flag: '🇸🇬',
     format: '+65 XXXX XXXX'
+  },
+  {
+    code: 'br',
+    name: 'Brazil',
+    flag: '🇧🇷',
+    format: '+55 (XX) 9XXXX-XXXX'
+  },
+  {
+    code: 'ca',
+    name: 'Canada',
+    flag: '🇨🇦',
+    format: '+1 (XXX) XXX-XXXX'
+  },
+  {
+    code: 'au',
+    name: 'Australia',
+    flag: '🇦🇺',
+    format: '+61 4XX XXX XXX'
   }
 ]
 

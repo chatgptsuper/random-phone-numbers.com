@@ -3,12 +3,18 @@ import Link from 'next/link'
 const countries = [
   { code: 'us', name: 'United States', flag: '🇺🇸' },
   { code: 'uk', name: 'United Kingdom', flag: '🇬🇧' },
+  { code: 'gh', name: 'Ghana', flag: '🇬🇭' },
   { code: 'cn', name: 'China', flag: '🇨🇳' },
   { code: 'in', name: 'India', flag: '🇮🇳' },
+  { code: 'ng', name: 'Nigeria', flag: '🇳🇬' },
+  { code: 'br', name: 'Brazil', flag: '🇧🇷' },
+  { code: 'ca', name: 'Canada', flag: '🇨🇦' },
+  { code: 'au', name: 'Australia', flag: '🇦🇺' },
   { code: 'jp', name: 'Japan', flag: '🇯🇵' },
   { code: 'sg', name: 'Singapore', flag: '🇸🇬' },
   { code: 'my', name: 'Malaysia', flag: '🇲🇾' },
   { code: 'ph', name: 'Philippines', flag: '🇵🇭' },
+
   // ... 其他国家
 ]
 

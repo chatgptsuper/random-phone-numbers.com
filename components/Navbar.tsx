@@ -17,6 +17,11 @@ const navLinks = [
       { href: '/phone-number-generator/sg', label: 'Singapore', flag: '🇸🇬' },
       { href: '/phone-number-generator/my', label: 'Malaysia', flag: '🇲🇾' },
       { href: '/phone-number-generator/ph', label: 'Philippines', flag: '🇵🇭' },
+      { href: '/phone-number-generator/gh', label: 'Ghana', flag: '🇬🇭' },
+      { href: '/phone-number-generator/ng', label: 'Nigeria', flag: '🇳🇬' },
+      { href: '/phone-number-generator/br', label: 'Brazil', flag: '🇧🇷' },
+      { href: '/phone-number-generator/ca', label: 'Canada', flag: '🇨🇦' },
+      { href: '/phone-number-generator/au', label: 'Australia', flag: '🇦🇺' }
     ]
   },
   { href: '/about', label: 'About' },

@@ -5,13 +5,16 @@ interface CountryInfoProps {
 }
 
 export default function CountryInfo({ country }: CountryInfoProps) {
+  // 构建显示用的完整格式
+  const displayFormat = `+${country.prefix} ${country.format}`;
+
   return (
     <div className="prose max-w-none">
       <div className="flex items-center gap-4 mb-6">
         <span className="text-4xl">{country.flag}</span>
         <div>
           <h3 className="text-2xl font-semibold mb-2">{country.name} Phone Format</h3>
-          <p className="text-base-content/70">{country.format}</p>
+          <p className="text-base-content/70">{displayFormat}</p>
         </div>
       </div>
 

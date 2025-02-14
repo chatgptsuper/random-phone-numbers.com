@@ -26,24 +26,44 @@ export interface CountryInfo {
 // 添加国家详细信息映射
 const countryDetails: Record<string, Partial<CountryInfo>> = {
   us: {
-    example: '+1 (555) 123-4567',
-    description: 'US phone numbers consist of a 3-digit area code and a 7-digit local number.'
+    example: '+1 555 123 4567',
+    description: 'US phone numbers are 10 digits long: 3-digit area code + 7-digit local number.'
   },
-  uk: {
+  gb: {
     example: '+44 7911 123456',
-    description: 'UK mobile numbers start with 07, followed by 9 more digits.'
+    description: 'UK mobile numbers start with 7 and are 10 digits long excluding country code.'
   },
   cn: {
-    example: '+86 138 1234 5678',
+    example: '+86 139 1234 5678',
     description: 'Chinese mobile numbers are 11 digits long, starting with 13-19.'
   },
   jp: {
-    example: '+81 90-1234-5678',
+    example: '+81 90 1234 5678',
     description: 'Japanese mobile numbers are 11 digits long, starting with 070, 080, or 090.'
   },
   sg: {
     example: '+65 8123 4567',
     description: 'Singapore mobile numbers are 8 digits long, starting with 8 or 9.'
+  },
+  gh: {
+    example: '+233 24 123 4567',
+    description: 'Ghana mobile numbers are 10 digits long, with network-specific prefixes like 024 (MTN), 020 (Vodafone), and 027 (AirtelTigo).'
+  },
+  ng: {
+    example: '+234 803 123 4567',
+    description: 'Nigerian mobile numbers are 11 digits long, with network-specific prefixes like 0803 (MTN), 0805 (Glo), 0802 (Airtel), and 0809 (9mobile).'
+  },
+  br: {
+    example: '+55 (11) 98765-4321',
+    description: 'Brazilian mobile numbers are 11 digits long (including area code), with mobile numbers starting with 9 after the area code. Major area codes include 11 (São Paulo) and 21 (Rio).'
+  },
+  ca: {
+    example: '+1 (416) 123-4567',
+    description: 'Canadian numbers follow the North American format with area codes like 416/647 (Toronto), 604 (Vancouver), and 514 (Montreal).'
+  },
+  au: {
+    example: '+61 412 345 678',
+    description: 'Australian mobile numbers start with 04 and are 10 digits long. Area codes include 02 (Sydney), 03 (Melbourne), and 07 (Brisbane).'
   }
 }
 

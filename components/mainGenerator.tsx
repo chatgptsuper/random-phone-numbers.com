@@ -6,8 +6,17 @@ import { useState, useEffect, useCallback } from 'react'
 import * as XLSX from 'xlsx'
 import { countryCode } from '@/data/countryCode'
 
+// 定义生成器属性接口
 interface MainGeneratorProps {
-  defaultCountry?: string
+  defaultCountry?: string;
+}
+
+// 定义选项接口
+interface FormatOptions {
+  withPlus: boolean;
+  withPrefix: boolean;
+  withComma: boolean;
+  withSpace: boolean;
 }
 
 export default function MainGenerator({ defaultCountry = "US" }: MainGeneratorProps) {
@@ -15,63 +24,82 @@ export default function MainGenerator({ defaultCountry = "US" }: MainGeneratorPr
   const [totalNum, setTotalNum] = useState("100");
   const [numberList, setNumberList] = useState<string[]>([]);
   const [content, setContent] = useState("");
-  const [withOption, setWithOption] = useState({
+  const [withOption, setWithOption] = useState<FormatOptions>({
     withPlus: true,
     withPrefix: true,
     withComma: false,
+    withSpace: true,
   });
 
   function generateNumber() {
     setIsCopied(false);
     const upperCountry = defaultCountry.toUpperCase();
-    if (upperCountry in countryCode) {
-      const tmpNumberList = [];
-      setNumberList([""]);
+    const countryData = countryCode[upperCountry];
 
-      const countryData = countryCode[upperCountry as keyof typeof countryCode];
-      const tmpSuffix = countryData.suffix;
-      const tmpPrefix = countryData.prefix;
-      const tmpLength = countryData.length;
+    if (!countryData) {
+      console.error(`Country code ${upperCountry} not found`);
+      return;
+    }
+
+    const tmpNumberList: string[] = [];
+    const { prefix, length, suffix, format } = countryData;
+
+    for (let j = 0; j < Number(totalNum); j++) {
+      // 选择后缀
+      const selectedSuffix = suffix[Math.floor(Math.random() * suffix.length)];
       
-      // 计算需要生成的剩余数字位数
-      // 对于 UK，如果前缀是 "44" 且后缀是 "7x"，那么还需要生成 8 位数字
-      const lastDigits = tmpLength - tmpPrefix.length - tmpSuffix[0].length;
+      // 生成剩余数字
+      const remainingLength = length - selectedSuffix.length;
+      const remainingDigits = Array.from(
+        { length: remainingLength }, 
+        () => Math.floor(Math.random() * 10)
+      ).join('');
 
-      for (let j = 0; j < Number(totalNum); j++) {
-        let newNumber = "";
-        // 随机选择一个后缀
-        const suffixIndex = Math.floor(Math.random() * tmpSuffix.length);
-        newNumber += tmpSuffix[suffixIndex];
+      // 组合完整号码
+      const fullNumber = selectedSuffix + remainingDigits;
 
-        // 生成剩余的随机数字
-        for (let i = 0; i < lastDigits; i++) {
-          newNumber += Math.floor(Math.random() * 10);
-        }
+      // 格式化号码（不包含前缀）
+      const digits = fullNumber.split('');
+      let digitIndex = 0;
+      let formattedNumber = format.replace(/X+/g, (match: string) => {
+        const segment = digits.slice(digitIndex, digitIndex + match.length).join('');
+        digitIndex += match.length;
+        return segment;
+      });
 
-        tmpNumberList.push(newNumber);
+      // 如果不使用空格，移除所有空格
+      if (!withOption.withSpace) {
+        formattedNumber = formattedNumber.replace(/\s+/g, '');
       }
 
-      setNumberList(tmpNumberList);
+      // 根据选项添加前缀
+      if (withOption.withPrefix) {
+        formattedNumber = prefix + (withOption.withSpace ? ' ' : '') + formattedNumber;
+      }
+      if (withOption.withPlus) {
+        formattedNumber = '+' + formattedNumber;
+      }
+
+      // 特殊国家处理
+      if (upperCountry === 'BR' && !formattedNumber.includes('9')) {
+        formattedNumber = formattedNumber.replace(/(\d{2})/, '$1 9');
+      }
+
+      tmpNumberList.push(formattedNumber);
     }
+
+    setNumberList(tmpNumberList);
   }
 
   const contentFill = useCallback(() => {
     const formatNumber = (num: string) => {
-      let formattedNumber = num;
-      if (withOption.withPrefix) {
-        const prefix = countryCode[defaultCountry.toUpperCase() as keyof typeof countryCode].prefix;
-        formattedNumber = prefix + formattedNumber;
-      }
-      if (withOption.withPlus) {
-        formattedNumber = `+${formattedNumber}`;
-      }
-      return formattedNumber;
+      return num; // 不需要再处理，因为生成时已经处理过了
     };
 
     const separator = withOption.withComma ? ", " : "\n";
     const formattedList = numberList.map(formatNumber);
     setContent(formattedList.join(separator));
-  }, [numberList, withOption, defaultCountry]);
+  }, [numberList, withOption]);
 
   useEffect(() => {
     contentFill();
@@ -165,6 +193,15 @@ export default function MainGenerator({ defaultCountry = "US" }: MainGeneratorPr
                 onChange={() => handleOptionToggle('withPrefix')}
               />
               <span>Include country code</span>
+            </label>
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                className="checkbox checkbox-primary"
+                checked={withOption.withSpace}
+                onChange={() => handleOptionToggle('withSpace')}
+              />
+              <span>Add spaces between numbers</span>
             </label>
             <label className="flex items-center gap-2 cursor-pointer">
               <input
