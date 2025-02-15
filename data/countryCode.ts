@@ -54,14 +54,14 @@ export const countryCode: Record<string, CountryCodeInfo> = {
     name: "United States"
   },
 
-  GB: {
-    prefix: "44",
-    length: 10,  // 英国手机号10位，不含国家代码
-    suffix: ["7"],  // 手机号以7开头
-    format: "XXXX XXXXXX",
-    flag: "🇬🇧",
-    name: "United Kingdom"
-  },
+  // GB: {
+  //   prefix: "44",
+  //   length: 10,  // 英国手机号10位，不含国家代码
+  //   suffix: ["7"],  // 手机号以7开头
+  //   format: "XXXX XXXXXX",
+  //   flag: "🇬🇧",
+  //   name: "United Kingdom"
+  // },
 
   BR: {
     prefix: "55",
@@ -76,7 +76,7 @@ export const countryCode: Record<string, CountryCodeInfo> = {
     prefix: "49",
     length: 11,
     suffix: ["150", "151", "152", "155", "156", "157", "159", "160", "161", "162", "163", "164", "165", "166", "167", "168", "169", "170"],
-    format: "+49 XXX XXXX XXXX",
+    format: "XXX XXXX XXXX",
     flag: "🇩🇪",
     name: "Germany"
   },
@@ -85,7 +85,7 @@ export const countryCode: Record<string, CountryCodeInfo> = {
     prefix: "33",
     length: 11,
     suffix: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
-    format: "+33 X XX XX XX XX",
+    format: "+X XX XX XX XX",
     flag: "🇫🇷",
     name: "France"
   },
@@ -121,7 +121,7 @@ export const countryCode: Record<string, CountryCodeInfo> = {
     prefix: "44",
     suffix: ["71", "72", "73", "74", "75", "77", "78", "79"],  // 英国手机号前缀
     length: 11,  // 包含前缀的总长度
-    format: "+44 XXXX XXXXXX",
+    format: "XXXX XXXXXX",
     flag: "🇬🇧",
     name: "United Kingdom"
   },
