@@ -1,106 +1,110 @@
 // 定义整个app的布局，包括主题切换、Google Analytics、页面元数据等
 
-import './globals.css'
-import { ThemeProvider } from '../components/providers/ThemeProvider' // 引入ThemeProvider组件，用于设置主题切换功能
-import type { Metadata } from 'next' // 引入Metadata组件，用于设置页面元数据
-import Script from 'next/script' // 引入Script组件，用于在页面中插入Google Analytics脚本
-import { Inter } from 'next/font/google'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+import "./globals.css";
+import { ThemeProvider } from "../components/providers/ThemeProvider"; // 引入ThemeProvider组件，用于设置主题切换功能
+import type { Metadata } from "next"; // 引入Metadata组件，用于设置页面元数据
+import Script from "next/script"; // 引入Script组件，用于在页面中插入Google Analytics脚本
+import { Inter } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://random-phone-numbers.com'),
-  title: 'Random Phone Numbers Generator - Free Phone Number Generator Tool',
-  description: 'Generate random phone numbers for multiple countries. Create fake phone numbers for testing. Features include bulk generation, US/UK/international phone numbers, customizable formats and Excel export.',
+  metadataBase: new URL("https://random-phone-numbers.com"),
+  title: "Random Phone Numbers - Free Phone Number Generator Tool",
+  description:
+    "Generate random phone numbers for multiple countries. Create fake phone numbers for testing. Features include bulk generation, US/UK/international phone numbers, customizable formats and Excel export.",
   keywords: [
-    'random phone numbers',
-    'phone number generator', 
-    'random phone number',
-    'fake phone number generator',
-    'phone number maker',
-    'usa phone number generator',
-    'us phone number generator',
-    'random usa phone number',
-    'fake phone number us',
-    'generate telephone number'
-  ].join(', '),
-  authors: [{ name: 'Ethan Ye' }],
-  creator: 'Ethan Ye',
-  publisher: 'Ethan Ye',
+    "random phone numbers",
+    "phone number generator",
+    "random phone number",
+    "fake phone number generator",
+    "phone number maker",
+    "usa phone number generator",
+    "us phone number generator",
+    "random usa phone number",
+    "fake phone number us",
+    "generate telephone number",
+  ].join(", "),
+  authors: [{ name: "Ethan Ye" }],
+  creator: "Ethan Ye",
+  publisher: "Ethan Ye",
   formatDetection: {
-    email: false,
+    // 移动端浏览器会自动检测页面中的电话、邮箱和地址，并将其转换为可点击的链接
+    email: false, // 通过formatdetection可以禁用自动检测功能
     address: false,
     telephone: false,
   },
+
   openGraph: {
-    title: 'Random Phone Numbers Generator - Free Phone Number Generator Tool',
-    description: 'Generate random phone numbers for multiple countries. Create fake phone numbers for testing. Features include bulk generation, US/UK/international phone numbers and Excel export.',
-    type: 'website',
-    locale: 'en_US',
-    siteName: 'Random Phone Numbers',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Random Phone Number Generator Tool Preview',
-      },
-    ],
+    title: "Random Phone Numbers - Free Phone Number Generator Tool",
+    description:
+      "Generate random phone numbers for multiple countries. Create fake phone numbers for testing. Features include bulk generation, US/UK/international phone numbers and Excel export.",
+    type: "website",
+    locale: "en_US",
+    siteName: "Random Phone Numbers",
   },
+
   robots: {
+    // 搜索引擎爬虫控制
     index: true,
     follow: true,
     nocache: true,
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
+
   viewport: {
-    width: 'device-width',
+    // 移动端视口配置
+    width: "device-width",
     initialScale: 1,
     maximumScale: 5,
   },
-  category: 'technology',
-}
+  category: "technology", // 网站分类
+};
 
-const jsonLd = { // 作用是提供给搜索引擎的结构化数据，帮助搜索引擎更好地理解网页内容
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'Random Phone Number Generator',
-  description: 'Free tool to generate random phone numbers for multiple countries. Create fake phone numbers for testing purposes.',
-  applicationCategory: 'UtilityApplication',
-  operatingSystem: 'Any',
-  url: 'https://random-phone-numbers.com',
+const jsonLd = {
+  // 作用是提供给搜索引擎的结构化数据，帮助搜索引擎更好地理解网页内容
+  "@context": "https://schema.org",
+  "@type": "WebApplication", // 定义类型为web应用
+  name: "Random Phone Numbers - Free Phone Number Generator",
+  description:
+  "Generate random phone numbers for multiple countries. Create fake phone numbers for testing. Features include bulk generation, US/UK/international phone numbers, customizable formats and Excel export.",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  url: "https://random-phone-numbers.com",
   author: {
-    '@type': 'Person',
-    name: 'SirGhazian',
+    "@type": "Person",
+    name: "Ethan Ye",
   },
   offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'USD'
+    // 免费声明
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
   },
   featureList: [
-    'Generate random phone numbers for multiple countries',
-    'US, UK, China, India phone number formats',
-    'Bulk phone number generation',
-    'Customizable number formats',
-    'Excel export feature',
-    'Copy to clipboard function',
-    'Free to use'
-  ]
-}
+    // 功能亮点
+    "Generate random phone numbers for multiple countries",
+    "US, UK, China, India phone number formats",
+    "Bulk phone number generation",
+    "Customizable number formats",
+    "Excel export feature",
+    "Copy to clipboard function",
+    "Free to use",
+  ],
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   // suppressHydrationWarning 是防止在SSR过程中出现警告
   return (
@@ -109,7 +113,9 @@ export default function RootLayout({
         <link rel="icon" href="/webico.ico" />
         <link rel="canonical" href="https://random-phone-numbers.com" />
       </head>
-      <body className={`min-h-screen bg-base-100 text-base-content transition-colors duration-300 ${inter.className}`}>
+      <body
+        className={`min-h-screen bg-base-100 text-base-content transition-colors duration-300 ${inter.className}`}
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -133,5 +139,5 @@ export default function RootLayout({
         </Script>
       </body>
     </html>
-  )
+  );
 }

@@ -24,7 +24,7 @@ export default function CountryGrid() {
       {countries.map(country => (
         <Link 
           key={country.code}
-          href={`/phone-number-generator/${country.code}`}
+          href={`/us/phone-number-generator/${country.code}`}
           className="p-4 bg-base-100 rounded-lg shadow-sm hover:shadow-md transition-shadow"
         >
           <div className="flex items-center space-x-3">

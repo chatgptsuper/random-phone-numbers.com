@@ -20,8 +20,8 @@ interface FormatOptions {
 }
 
 export default function MainGenerator({ defaultCountry = "US" }: MainGeneratorProps) {
-  const [isCopied, setIsCopied] = useState(false);
-  const [totalNum, setTotalNum] = useState("100");
+  const [isCopied, setIsCopied] = useState(false);   // 判断号码是否被复制
+  const [totalNum, setTotalNum] = useState("100");  // 
   const [numberList, setNumberList] = useState<string[]>([]);
   const [content, setContent] = useState("");
   const [withOption, setWithOption] = useState<FormatOptions>({

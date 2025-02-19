@@ -29,7 +29,7 @@ const countryDetails: Record<string, Partial<CountryInfo>> = {
     example: '+1 555 123 4567',
     description: 'US phone numbers are 10 digits long: 3-digit area code + 7-digit local number.'
   },
-  gb: {
+  uk: {
     example: '+44 7911 123456',
     description: 'UK mobile numbers start with 7 and are 10 digits long excluding country code.'
   },
@@ -54,16 +54,28 @@ const countryDetails: Record<string, Partial<CountryInfo>> = {
     description: 'Nigerian mobile numbers are 11 digits long, with network-specific prefixes like 0803 (MTN), 0805 (Glo), 0802 (Airtel), and 0809 (9mobile).'
   },
   br: {
-    example: '+55 (11) 98765-4321',
+    example: '+55 (11) 98765 4321',
     description: 'Brazilian mobile numbers are 11 digits long (including area code), with mobile numbers starting with 9 after the area code. Major area codes include 11 (São Paulo) and 21 (Rio).'
   },
   ca: {
-    example: '+1 (416) 123-4567',
+    example: '+1 (416) 123 4567',
     description: 'Canadian numbers follow the North American format with area codes like 416/647 (Toronto), 604 (Vancouver), and 514 (Montreal).'
   },
   au: {
     example: '+61 412 345 678',
     description: 'Australian mobile numbers start with 04 and are 10 digits long. Area codes include 02 (Sydney), 03 (Melbourne), and 07 (Brisbane).'
+  },
+  in: {
+    example: "+91 98765 4321",
+    description: "Indian mobile numbers are 10 digits long, starting with 7, 8, or 9. Major carriers include Jio, Airtel, Vodafone, BSNL, and Vi, with region-specific prefixes."
+  },
+  ph: {
+    example: '+63 912 345 6789',
+    description: 'Philippine mobile numbers are 10 digits long (including area code), starting with 9. Major carriers include Globe, Smart, and Sun, with region-specific prefixes like 917 (Globe) and 920 (Smart).'
+  },
+  my: {
+    example: '+60 12 3456 789',
+    description: 'Malaysian mobile numbers are 9 digits long (including area code), starting with 01. Major carriers include Maxis (012-019), Celcom (017-019), and Digi (010-019).'
   }
 }
 

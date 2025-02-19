@@ -1,33 +1,32 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 const footerLinks = [
   {
-    title: 'Popular Generators',
+    title: "Popular Generators",
     links: [
-      { label: 'US Numbers', href: '/phone-number-generator/us' },
-      { label: 'UK Numbers', href: '/phone-number-generator/uk' },
-      { label: 'China Numbers', href: '/phone-number-generator/cn' },
-      { label: 'India Numbers', href: '/phone-number-generator/in' },
-      { label: 'Japan Numbers', href: '/phone-number-generator/jp' },
-      { label: 'Singapore Numbers', href: '/phone-number-generator/sg' },
-      { label: 'Malaysia Numbers', href: '/phone-number-generator/my' },
-      { label: 'Philippines Numbers', href: '/phone-number-generator/ph' },
-    ]
+      { label: "US Numbers", href: "/us/phone-number-generator/us" },
+      { label: "UK Numbers", href: "/us/phone-number-generator/uk" },
+      { label: "China Numbers", href: "/us/phone-number-generator/cn" },
+      { label: "Ghana Numbers", href: "/us/phone-number-generator/gh" },
+      { label: "India Numbers", href: "/us/phone-number-generator/in" },
+      { label: "Philippines Numbers", href: "/us/phone-number-generator/ph" },
+      { label: "Malaysia Numbers", href: "/us/phone-number-generator/my" },
+    ],
   },
   {
-    title: 'Company',
+    title: "Company",
     links: [
-      { label: 'About', href: '/about' },
-      { label: 'Privacy Policy', href: '/privacy' },
-      { label: 'Terms of Use', href: '/terms' },
-      { label: 'Contact', href: '/contact' }
-    ]
-  }
-]
+      { label: "About", href: "/about" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Use", href: "/terms" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
+];
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
-  
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-base-200 pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -39,7 +38,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.href}>
-                    <Link 
+                    <Link
                       href={link.href}
                       className="text-base-content/70 hover:text-primary transition-colors"
                     >
@@ -57,14 +56,14 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center space-x-2">
               <span className="text-2xl">📱</span>
-              <span className="font-bold text-lg">Phone Generator</span>
+              <span className="font-bold text-lg">Random Phone Numbers</span>
             </div>
             <div className="text-base-content/70 text-sm text-center">
-              © {currentYear} Phone Number Generator. All rights reserved.
+              © {currentYear} Random Phone Numbers. All rights reserved.
             </div>
           </div>
         </div>
       </div>
     </footer>
-  )
-} 
+  );
+}

@@ -5,19 +5,19 @@ import CountryInfo from '@/components/CountryInfo'
 import { getCountryInfo } from '@/utils/countryUtils'
 
 export const metadata: Metadata = {
-  title: 'Indian Phone Number Generator - Generate Random India Phone Numbers',
-  description: 'Generate random Indian phone numbers with our free generator. Create mobile numbers with valid carrier prefixes and proper formats for India.',
+  title: 'Chinese Phone Number Generator - Generate Random China Phone Numbers',
+  description: 'Generate random Chinese phone numbers with our free generator. Create mobile numbers with valid carrier prefixes and proper formats for China.',
   keywords: [
-    'indian phone number generator',
-    'india phone numbers',
-    'random indian phone numbers',
-    'fake indian phone numbers',
-    'india mobile numbers'
+    'chinese phone number generator',
+    'china phone numbers',
+    'random chinese phone numbers',
+    'fake chinese phone numbers',
+    'china mobile numbers'
   ].join(', ')
 }
 
-export default function INPage() {
-  const country = getCountryInfo('in')
+export default function CNPage() {
+  const country = getCountryInfo('cn')
   
   return (
     <main className="min-h-screen w-full relative">
@@ -27,10 +27,10 @@ export default function INPage() {
       <section className="py-12 bg-base-200">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold text-center mb-6">
-            Indian Phone Number Generator
+            Chinese Phone Number Generator
           </h1>
           <p className="text-xl text-center text-base-content/80 max-w-2xl mx-auto">
-            Generate random Indian phone numbers with proper carrier prefixes and formats.
+            Generate random Chinese phone numbers with proper carrier prefixes and formats.
           </p>
         </div>
       </section>
@@ -38,7 +38,7 @@ export default function INPage() {
       {/* Generator Section */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <MainGenerator defaultCountry="IN" />
+          <MainGenerator defaultCountry="CN" />
         </div>
       </section>
 
@@ -46,7 +46,7 @@ export default function INPage() {
       <section className="py-12 bg-base-200">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold mb-8">
-            About Indian Phone Numbers
+            About Chinese Phone Numbers
           </h2>
           <CountryInfo country={country} />
         </div>
@@ -55,35 +55,35 @@ export default function INPage() {
       {/* Additional Info for SEO */}
       <section className="py-12">
         <div className="container mx-auto px-4 prose max-w-3xl">
-          <h2>Indian Phone Number Format Guide</h2>
+          <h2>Chinese Phone Number Format Guide</h2>
           <p>
-            Indian mobile phone numbers follow a specific structure:
+            Chinese mobile phone numbers follow a specific structure:
           </p>
           <ul>
-            <li>All numbers start with +91 (country code)</li>
-            <li>Mobile numbers are 10 digits long</li>
-            <li>First digit is always between 6-9</li>
-            <li>Different prefixes for different carriers and circles</li>
+            <li>All numbers start with +86 (country code)</li>
+            <li>Mobile numbers are 11 digits long</li>
+            <li>Starts with carrier-specific prefixes (13x, 14x, 15x, etc.)</li>
+            <li>Different prefixes represent different carriers</li>
           </ul>
           
           <h3>Mobile Carrier Prefixes</h3>
           <ul>
-            <li>Jio: 89, 90, 70</li>
-            <li>Airtel: 98, 99, 80</li>
-            <li>Vodafone: 97, 96, 95</li>
-            <li>BSNL: 94, 93, 91</li>
+            <li>China Mobile: 134-139, 150-153, 157-159, 182-184</li>
+            <li>China Unicom: 130-132, 155-156, 185-186</li>
+            <li>China Telecom: 133, 180-181, 189</li>
+            <li>Virtual Operators: 170-171, 175-177, 178, 179</li>
           </ul>
 
           <h3>Common Use Cases</h3>
           <p>
-            Our Indian phone number generator is perfect for:
+            Our Chinese phone number generator is perfect for:
           </p>
           <ul>
-            <li>Testing applications for the Indian market</li>
-            <li>Validating Indian phone formats</li>
+            <li>Testing applications for the Chinese market</li>
+            <li>Validating Chinese phone formats</li>
             <li>Creating test data for Asian market applications</li>
             <li>Testing international SMS services</li>
-            <li>Database testing with Indian formats</li>
+            <li>Database testing with Chinese formats</li>
           </ul>
         </div>
       </section>

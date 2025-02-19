@@ -66,7 +66,8 @@ export default function GhanaPage() {
             <li>MTN: Starts with 024, 054, 055</li>
             <li>Vodafone: Starts with 020, 050</li>
             <li>AirtelTigo: Starts with 027, 057</li>
-            <li>All numbers are 10 digits long</li>
+            <li>Glo: Starts with 026, 056, 058, 059</li> 
+            <li>All numbers are 9 digits long (not counting the country code)</li> 
           </ul>
           
           <h3>Network Operators</h3>
@@ -74,6 +75,7 @@ export default function GhanaPage() {
             <li>MTN - Largest network in Ghana</li>
             <li>Vodafone - Second largest operator</li>
             <li>AirtelTigo - Third major network</li>
+            <li>Glo - A major operator in Ghana, with a growing presence</li>
           </ul>
 
           <h3>Common Applications</h3>
@@ -86,6 +88,7 @@ export default function GhanaPage() {
             <li>SMS service testing</li>
             <li>Database and CRM system testing</li>
             <li>Form validation testing</li>
+            <li>Customer support system testing</li>
           </ul>
         </div>
       </section>

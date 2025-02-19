@@ -64,9 +64,9 @@ export default function BrazilPage() {
             Brazilian phone numbers follow specific formats based on region and type:
           </p>
           <ul>
-            <li>Mobile numbers start with 9</li>
-            <li>Area codes: 11 (São Paulo), 21 (Rio), 31 (Belo Horizonte)</li>
-            <li>Mobile numbers are 9 digits</li>
+            <li>Mobile numbers always start with 9</li>
+            <li>Area codes: 11 (São Paulo), 21 (Rio), 31 (Belo Horizonte), 41 (Curitiba), 51 (Porto Alegre), 61 (Brasília)</li>
+            <li>Mobile numbers are 9 digits long, starting with 9</li>
             <li>Total length: 11 digits (including area code)</li>
             <li>Format: (XX) 9XXXX-XXXX</li>
           </ul>
@@ -79,6 +79,9 @@ export default function BrazilPage() {
             <li>41 - Curitiba</li>
             <li>51 - Porto Alegre</li>
             <li>61 - Brasília</li>
+            <li>85 - Fortaleza</li>
+            <li>82 - Maceió</li>
+            <li>75 - Salvador</li>
           </ul>
 
           <h3>Common Applications</h3>
@@ -101,6 +104,7 @@ export default function BrazilPage() {
           </p>
         </div>
       </section>
+
     </main>
   )
 } 

@@ -74,7 +74,7 @@ export default function SGPage() {
             <li>Singtel: 8xxx xxxx, 9xxx xxxx</li>
             <li>StarHub: 8xxx xxxx, 9xxx xxxx</li>
             <li>M1: 8xxx xxxx, 9xxx xxxx</li>
-            <li>Virtual Operators: 8xxx xxxx, 9xxx xxxx</li>
+            <li>Virtual Operators: Same prefixes as the main mobile carriers (e.g., Singtel, StarHub, M1)</li>
           </ul>
 
           <h3>Number Types</h3>
@@ -82,8 +82,9 @@ export default function SGPage() {
             <li>Mobile: 8xxx xxxx, 9xxx xxxx</li>
             <li>Fixed Line: 6xxx xxxx</li>
             <li>VoIP: 3xxx xxxx</li>
-            <li>Pager: 7xxx xxxx (legacy)</li>
+            <li>Pager (Legacy): 7xxx xxxx</li>
           </ul>
+
 
           <h3>Common Use Cases</h3>
           <p>

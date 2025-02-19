@@ -66,14 +66,13 @@ export default function JPPage() {
             <li>All numbers start with +81 (country code)</li>
             <li>Mobile numbers are typically 11 digits long</li>
             <li>Mobile numbers start with 070, 080, or 090</li>
-            <li>Different prefixes for different carriers and regions</li>
           </ul>
           
           <h3>Mobile Carrier Prefixes</h3>
           <ul>
-            <li>NTT Docomo: 090-1xxx-xxxx, 090-2xxx-xxxx</li>
-            <li>au (KDDI): 080-1xxx-xxxx, 080-2xxx-xxxx</li>
-            <li>SoftBank: 070-1xxx-xxxx, 070-2xxx-xxxx</li>
+            <li>NTT Docomo: 090, 080, 070</li>
+            <li>au (KDDI): 080, 090</li>
+            <li>SoftBank: 070, 080, 090</li>
           </ul>
 
           <h3>Regional Area Codes</h3>

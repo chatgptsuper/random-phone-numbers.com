@@ -9,19 +9,19 @@ const navLinks = [
   {
     label: 'Generators',
     children: [
-      { href: '/phone-number-generator/us', label: 'United States', flag: '🇺🇸' },
-      { href: '/phone-number-generator/uk', label: 'United Kingdom', flag: '🇬🇧' },
-      { href: '/phone-number-generator/cn', label: 'China', flag: '🇨🇳' },
-      { href: '/phone-number-generator/in', label: 'India', flag: '🇮🇳' },
-      { href: '/phone-number-generator/jp', label: 'Japan', flag: '🇯🇵' },
-      { href: '/phone-number-generator/sg', label: 'Singapore', flag: '🇸🇬' },
-      { href: '/phone-number-generator/my', label: 'Malaysia', flag: '🇲🇾' },
-      { href: '/phone-number-generator/ph', label: 'Philippines', flag: '🇵🇭' },
-      { href: '/phone-number-generator/gh', label: 'Ghana', flag: '🇬🇭' },
-      { href: '/phone-number-generator/ng', label: 'Nigeria', flag: '🇳🇬' },
-      { href: '/phone-number-generator/br', label: 'Brazil', flag: '🇧🇷' },
-      { href: '/phone-number-generator/ca', label: 'Canada', flag: '🇨🇦' },
-      { href: '/phone-number-generator/au', label: 'Australia', flag: '🇦🇺' }
+      { href: '/us/phone-number-generator/us', label: 'United States', flag: '🇺🇸' },
+      { href: '/us/phone-number-generator/uk', label: 'United Kingdom', flag: '🇬🇧' },
+      { href: '/us/phone-number-generator/cn', label: 'China', flag: '🇨🇳' },
+      { href: '/us/phone-number-generator/in', label: 'India', flag: '🇮🇳' },
+      { href: '/us/phone-number-generator/jp', label: 'Japan', flag: '🇯🇵' },
+      { href: '/us/phone-number-generator/sg', label: 'Singapore', flag: '🇸🇬' },
+      { href: '/us/phone-number-generator/my', label: 'Malaysia', flag: '🇲🇾' },
+      { href: '/us/phone-number-generator/ph', label: 'Philippines', flag: '🇵🇭' },
+      { href: '/us/phone-number-generator/gh', label: 'Ghana', flag: '🇬🇭' },
+      { href: '/us/phone-number-generator/ng', label: 'Nigeria', flag: '🇳🇬' },
+      { href: '/us/phone-number-generator/br', label: 'Brazil', flag: '🇧🇷' },
+      { href: '/us/phone-number-generator/ca', label: 'Canada', flag: '🇨🇦' },
+      { href: '/us/phone-number-generator/au', label: 'Australia', flag: '🇦🇺' }
     ]
   },
   { href: '/about', label: 'About' },
@@ -41,7 +41,7 @@ export default function Navbar() {
             className="flex items-center space-x-2 text-primary font-bold text-2xl"
           >
             <span>📱</span>
-            <span>Phone Generator</span>
+            <span>Random Phone Numbers</span>
           </Link>
 
           {/* 桌面端导航链接 */}

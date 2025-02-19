@@ -10,79 +10,79 @@
 
   <!-- 国家生成器页面 -->
   <url>
-    <loc>https://random-phone-numbers.com/phone-number-generator/us</loc>
+    <loc>https://random-phone-numbers.com/us/phone-number-generator/us</loc>
     <lastmod>2024-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://random-phone-numbers.com/phone-number-generator/uk</loc>
+    <loc>https://random-phone-numbers.com/us/phone-number-generator/uk</loc>
     <lastmod>2024-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://random-phone-numbers.com/phone-number-generator/cn</loc>
+    <loc>https://random-phone-numbers.com/us/phone-number-generator/cn</loc>
     <lastmod>2024-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://random-phone-numbers.com/phone-number-generator/in</loc>
+    <loc>https://random-phone-numbers.com/us/phone-number-generator/in</loc>
     <lastmod>2024-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://random-phone-numbers.com/phone-number-generator/jp</loc>
+    <loc>https://random-phone-numbers.com/us/phone-number-generator/jp</loc>
     <lastmod>2024-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://random-phone-numbers.com/phone-number-generator/sg</loc>
+    <loc>https://random-phone-numbers.com/us/phone-number-generator/sg</loc>
     <lastmod>2024-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://random-phone-numbers.com/phone-number-generator/my</loc>
+    <loc>https://random-phone-numbers.com/us/phone-number-generator/my</loc>
     <lastmod>2024-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://random-phone-numbers.com/phone-number-generator/ph</loc>
+    <loc>https://random-phone-numbers.com/us/phone-number-generator/ph</loc>
     <lastmod>2024-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://random-phone-numbers.com/phone-number-generator/gh</loc>
+    <loc>https://random-phone-numbers.com/us/phone-number-generator/gh</loc>
     <lastmod>2024-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://random-phone-numbers.com/phone-number-generator/ng</loc>
+    <loc>https://random-phone-numbers.com/us/phone-number-generator/ng</loc>
     <lastmod>2024-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://random-phone-numbers.com/phone-number-generator/br</loc>
+    <loc>https://random-phone-numbers.com/us/phone-number-generator/br</loc>
     <lastmod>2024-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://random-phone-numbers.com/phone-number-generator/ca</loc>
+    <loc>https://random-phone-numbers.com/us/phone-number-generator/ca</loc>
     <lastmod>2024-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://random-phone-numbers.com/phone-number-generator/au</loc>
+    <loc>https://random-phone-numbers.com/us/phone-number-generator/au</loc>
     <lastmod>2024-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -90,13 +90,13 @@
 
   <!-- 确保添加所有在 countryCode.ts 中定义的国家 -->
   <url>
-    <loc>https://random-phone-numbers.com/phone-number-generator/de</loc>
+    <loc>https://random-phone-numbers.com/us/phone-number-generator/de</loc>
     <lastmod>2024-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://random-phone-numbers.com/phone-number-generator/fr</loc>
+    <loc>https://random-phone-numbers.com/us/phone-number-generator/fr</loc>
     <lastmod>2024-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

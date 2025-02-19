@@ -77,13 +77,13 @@ const popularCountries = [
 
 // 添加静态 metadata
 export const metadata: Metadata = {
-  title: 'Random Phone Numbers Generator - Free International Phone Numbers Generator',
-  description: 'Generate random phone numbers for multiple countries including US, UK, China and more. Create phone numbers with country-specific formats for testing and development.',
+  title: 'Random Phone Numbers - Free Phone Number Generator',
+  description: 'Generate random phone numbers for multiple countries. Create fake phone numbers for testing. Features include bulk generation, US/UK/international phone numbers, customizable formats and Excel export.',
   keywords: [
     'random phone numbers',
     'phone number generator',
-    'international phone numbers',
     'fake phone numbers',
+    'international phone numbers',
     'test phone numbers'
   ].join(', ')
 }
@@ -106,7 +106,7 @@ export default function Home() {
           {/* 添加快速开始按钮 */}
           <div className="flex justify-center gap-4">
             <Link 
-              href="/phone-number-generator/us" 
+              href="/us/phone-number-generator/us" 
               className="btn btn-primary btn-lg"
             >
               Start with US Numbers
@@ -121,7 +121,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Popular Countries Section - 重新设计更醒目 */}
+      {/* Popular Countries Section - 大block设计更醒目 */}
       <section id="countries" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -138,7 +138,7 @@ export default function Home() {
             {popularCountries.map(country => (
               <Link
                 key={country.code}
-                href={`/phone-number-generator/${country.code}`}
+                href={`/us/phone-number-generator/${country.code}`}
                 className="group p-8 bg-base-200 rounded-xl hover:bg-primary/10 transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div className="flex flex-col items-center text-center">
@@ -240,7 +240,7 @@ export default function Home() {
             <div className="collapse collapse-plus bg-base-100">
               <input type="radio" name="faq" />
               <div className="collapse-title text-xl font-medium">
-                Can I use these numbers for testing?
+                Can I use these phone numbers for testing?
               </div>
               <div className="collapse-content">
                 <p>Yes! These numbers are perfect for testing applications, forms, and databases that need to handle phone numbers.</p>

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import ThemeController from '@/components/themeController'
 
 export const metadata: Metadata = {
-  title: 'About Phone Number Generator - Free Random Phone Number Generator Tool',
+  title: 'About Random Phone Numbers - Free Phone Number Generator',
   description: 'Learn about our free phone number generator tool. Generate random phone numbers for testing and development purposes across multiple countries.',
   keywords: [
     'about phone number generator',
