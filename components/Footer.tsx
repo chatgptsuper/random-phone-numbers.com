@@ -4,13 +4,13 @@ const footerLinks = [
   {
     title: "Popular Generators",
     links: [
-      { label: "US Numbers", href: "/phone-number-generator/us" },
-      { label: "UK Numbers", href: "/phone-number-generator/uk" },
-      { label: "China Numbers", href: "/phone-number-generator/cn" },
-      { label: "Ghana Numbers", href: "/phone-number-generator/gh" },
-      { label: "India Numbers", href: "/phone-number-generator/in" },
-      { label: "Philippines Numbers", href: "/phone-number-generator/ph" },
-      { label: "Malaysia Numbers", href: "/phone-number-generator/my" },
+      { label: "US Numbers", href: "https://random-phone-numbers.com/phone-number-generator/us" },
+      { label: "UK Numbers", href: "https://random-phone-numbers.com/phone-number-generator/uk" },
+      { label: "China Numbers", href: "https://random-phone-numbers.com/phone-number-generator/cn" },
+      { label: "Ghana Numbers", href: "https://random-phone-numbers.com/phone-number-generator/gh" },
+      { label: "India Numbers", href: "https://random-phone-numbers.com/phone-number-generator/in" },
+      { label: "Philippines Numbers", href: "https://random-phone-numbers.com/phone-number-generator/ph" },
+      { label: "Malaysia Numbers", href: "https://random-phone-numbers.com/phone-number-generator/my" },
     ],
   },
   {

@@ -9,19 +9,19 @@ const navLinks = [
   {
     label: 'Generators',
     children: [
-      { href: '/phone-number-generator/us', label: 'United States', flag: '🇺🇸' },
-      { href: '/phone-number-generator/uk', label: 'United Kingdom', flag: '🇬🇧' },
-      { href: '/phone-number-generator/cn', label: 'China', flag: '🇨🇳' },
-      { href: '/phone-number-generator/in', label: 'India', flag: '🇮🇳' },
-      { href: '/phone-number-generator/jp', label: 'Japan', flag: '🇯🇵' },
-      { href: '/phone-number-generator/sg', label: 'Singapore', flag: '🇸🇬' },
-      { href: '/phone-number-generator/my', label: 'Malaysia', flag: '🇲🇾' },
-      { href: '/phone-number-generator/ph', label: 'Philippines', flag: '🇵🇭' },
-      { href: '/phone-number-generator/gh', label: 'Ghana', flag: '🇬🇭' },
-      { href: '/phone-number-generator/ng', label: 'Nigeria', flag: '🇳🇬' },
-      { href: '/phone-number-generator/br', label: 'Brazil', flag: '🇧🇷' },
-      { href: '/phone-number-generator/ca', label: 'Canada', flag: '🇨🇦' },
-      { href: '/phone-number-generator/au', label: 'Australia', flag: '🇦🇺' }
+      { href: 'https://random-phone-numbers.com/phone-number-generator/us', label: 'United States', flag: '🇺🇸' },
+      { href: 'https://random-phone-numbers.com/phone-number-generator/uk', label: 'United Kingdom', flag: '🇬🇧' },
+      { href: 'https://random-phone-numbers.com/phone-number-generator/cn', label: 'China', flag: '🇨🇳' },
+      { href: 'https://random-phone-numbers.com/phone-number-generator/in', label: 'India', flag: '🇮🇳' },
+      { href: 'https://random-phone-numbers.com/phone-number-generator/jp', label: 'Japan', flag: '🇯🇵' },
+      { href: 'https://random-phone-numbers.com/phone-number-generator/sg', label: 'Singapore', flag: '🇸🇬' },
+      { href: 'https://random-phone-numbers.com/phone-number-generator/my', label: 'Malaysia', flag: '🇲🇾' },
+      { href: 'https://random-phone-numbers.com/phone-number-generator/ph', label: 'Philippines', flag: '🇵🇭' },
+      { href: 'https://random-phone-numbers.com/phone-number-generator/gh', label: 'Ghana', flag: '🇬🇭' },
+      { href: 'https://random-phone-numbers.com/phone-number-generator/ng', label: 'Nigeria', flag: '🇳🇬' },
+      { href: 'https://random-phone-numbers.com/phone-number-generator/br', label: 'Brazil', flag: '🇧🇷' },
+      { href: 'https://random-phone-numbers.com/phone-number-generator/ca', label: 'Canada', flag: '🇨🇦' },
+      { href: 'https://random-phone-numbers.com/phone-number-generator/au', label: 'Australia', flag: '🇦🇺' }
     ]
   },
   { href: '/about', label: 'About' },

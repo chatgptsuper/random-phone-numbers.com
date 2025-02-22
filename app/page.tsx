@@ -106,7 +106,7 @@ export default function Home() {
           {/* 添加快速开始按钮 */}
           <div className="flex justify-center gap-4">
             <Link 
-              href="/phone-number-generator/us" 
+              href="https://random-phone-numbers.com/phone-number-generator/us" 
               className="btn btn-primary btn-lg"
             >
               Start with US Numbers
@@ -138,7 +138,7 @@ export default function Home() {
             {popularCountries.map(country => (
               <Link
                 key={country.code}
-                href={`/phone-number-generator/${country.code}`}
+                href={`https://random-phone-numbers.com/phone-number-generator/${country.code}`}
                 className="group p-8 bg-base-200 rounded-xl hover:bg-primary/10 transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div className="flex flex-col items-center text-center">
