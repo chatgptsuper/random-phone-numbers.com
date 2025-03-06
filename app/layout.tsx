@@ -112,6 +112,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/webico.ico" />
         <link rel="canonical" href="https://random-phone-numbers.com" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5237772343297981"
+          crossOrigin="anonymous"></script>
+          <meta name="google-adsense-account" content="ca-pub-5237772343297981"></meta>
       </head>
       <body
         className={`min-h-screen bg-base-100 text-base-content transition-colors duration-300 ${inter.className}`}
