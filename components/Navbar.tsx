@@ -21,7 +21,8 @@ const navLinks = [
       { href: 'https://random-phone-numbers.com/phone-number-generator/ng', label: 'Nigeria', flag: '🇳🇬' },
       { href: 'https://random-phone-numbers.com/phone-number-generator/br', label: 'Brazil', flag: '🇧🇷' },
       { href: 'https://random-phone-numbers.com/phone-number-generator/ca', label: 'Canada', flag: '🇨🇦' },
-      { href: 'https://random-phone-numbers.com/phone-number-generator/au', label: 'Australia', flag: '🇦🇺' }
+      { href: 'https://random-phone-numbers.com/phone-number-generator/au', label: 'Australia', flag: '🇦🇺' },
+      { href: '/phone-number-generator', label: 'All Countries', flag: '🌎' },
     ]
   },
   { href: '/about', label: 'About' },
@@ -85,14 +86,14 @@ export default function Navbar() {
                           key={child.href}
                           href={child.href}
                           className={`
-                            flex items-center space-x-2 px-4 py-3 text-base
+                            flex items-center px-4 py-3 text-base
                             ${pathname === child.href 
                               ? 'text-primary bg-primary/10' 
                               : 'text-base-content/70 hover:text-primary hover:bg-base-200'
                             }
                           `}
                         >
-                          <span>{child.flag}</span>
+                          <span className="text-xl mr-3 inline-block">{child.flag}</span>
                           <span>{child.label}</span>
                         </Link>
                       ))}
@@ -151,20 +152,33 @@ export default function Navbar() {
                 <div className="px-3 py-2 text-base font-medium text-base-content/70">
                   Generators
                 </div>
-                {navLinks[1].children && navLinks[1].children.map(child => (
+                <Link
+                  href="/phone-number-generator"
+                  className={`
+                    flex items-center px-3 py-2 rounded-md text-sm
+                    ${pathname === '/phone-number-generator' 
+                      ? 'text-primary bg-primary/10' 
+                      : 'text-base-content/70 hover:text-primary hover:bg-primary/5'
+                    }
+                  `}
+                >
+                  <span className="text-xl mr-3 inline-block">🌎</span>
+                  <span>All Countries</span>
+                </Link>
+                {navLinks[1].children && navLinks[1].children.slice(0, -1).map(child => (
                   <Link
                     key={child.href}
                     href={child.href}
                     className={`
-                      block px-3 py-2 rounded-md text-sm
+                      flex items-center px-3 py-2 rounded-md text-sm
                       ${pathname === child.href 
                         ? 'text-primary bg-primary/10' 
                         : 'text-base-content/70 hover:text-primary hover:bg-primary/5'
                       }
                     `}
                   >
-                    <span className="mr-2">{child.flag}</span>
-                    {child.label}
+                    <span className="text-xl mr-3 inline-block">{child.flag}</span>
+                    <span>{child.label}</span>
                   </Link>
                 ))}
               </div>

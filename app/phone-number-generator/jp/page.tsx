@@ -6,17 +6,7 @@ import { getCountryInfo } from '@/utils/countryUtils'
 
 export const metadata: Metadata = {
   title: 'Japanese Phone Number Generator - Generate Random Japan Phone Numbers',
-  description: 'Generate random Japanese phone numbers with our free generator. Create mobile numbers with valid carrier prefixes and proper formats for Japan.',
-  keywords: [
-    'japanese phone number generator',
-    'japan phone numbers',
-    'random japanese phone numbers',
-    'fake japanese phone numbers',
-    'japan mobile numbers',
-    'japan cell phone numbers',
-    'japanese mobile generator',
-    'tokyo phone numbers'
-  ].join(', ')
+  description: 'Japanese Phone Number Generator. Create mobile numbers with valid carrier prefixes and proper formats for Japan.'
 }
 
 export default function JPPage() {
@@ -48,65 +38,83 @@ export default function JPPage() {
       {/* Country Info Section */}
       <section className="py-12 bg-base-200">
         <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-semibold mb-8">
             About Japanese Phone Numbers
           </h2>
           <CountryInfo country={country} />
+          </div>
         </div>
       </section>
 
       {/* Additional Info for SEO */}
-      <section className="py-12">
-        <div className="container mx-auto px-4 prose max-w-3xl">
-          <h2>Japanese Phone Number Format Guide</h2>
-          <p>
-            Japanese mobile phone numbers follow a specific structure:
-          </p>
-          <ul>
-            <li>All numbers start with +81 (country code)</li>
-            <li>Mobile numbers are typically 11 digits long</li>
-            <li>Mobile numbers start with 070, 080, or 090</li>
-          </ul>
-          
-          <h3>Mobile Carrier Prefixes</h3>
-          <ul>
-            <li>NTT Docomo: 090, 080, 070</li>
-            <li>au (KDDI): 080, 090</li>
-            <li>SoftBank: 070, 080, 090</li>
-          </ul>
+      <section className="py-16 bg-base-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-base-200 p-8 rounded-xl shadow-lg mb-8">
+              <h2 className="text-2xl font-bold mb-6 text-primary">
+                Japanese Phone Number Format Guide
+              </h2>
+              <p className="text-base-content/80 mb-4">
+                Japanese mobile phone numbers follow a specific structure:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-base-content/80">
+                <li>All numbers start with +81 (country code)</li>
+                <li>Mobile numbers are typically 11 digits long</li>
+                <li>Mobile numbers start with 070, 080, or 090</li>
+              </ul>
+            </div>
 
-          <h3>Regional Area Codes</h3>
-          <ul>
-            <li>Tokyo: 03</li>
-            <li>Osaka: 06</li>
-            <li>Yokohama: 045</li>
-            <li>Nagoya: 052</li>
-            <li>Sapporo: 011</li>
-          </ul>
+            <div className="bg-base-200 p-8 rounded-xl shadow-lg mb-8">
+              <h3 className="text-xl font-semibold mb-6 text-primary">
+                Mobile Carrier Prefixes
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-base-content/80">
+                <div>NTT Docomo: 090, 080, 070</div>
+                <div>au (KDDI): 080, 090</div>
+                <div>SoftBank: 070, 080, 090</div>
+              </div>
+            </div>
 
-          <h3>Common Use Cases</h3>
-          <p>
-            Our Japanese phone number generator is perfect for:
-          </p>
-          <ul>
-            <li>Testing applications for the Japanese market</li>
-            <li>Validating Japanese phone formats</li>
-            <li>Creating test data for Asian market applications</li>
-            <li>Testing international SMS services</li>
-            <li>Database testing with Japanese formats</li>
-            <li>Mobile app development for Japan</li>
-          </ul>
+            <div className="bg-base-200 p-8 rounded-xl shadow-lg mb-8">
+              <h3 className="text-xl font-semibold mb-6 text-primary">
+                Regional Area Codes
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-base-content/80">
+                <div>Tokyo: 03</div>
+                <div>Osaka: 06</div>
+                <div>Yokohama: 045</div>
+                <div>Nagoya: 052</div>
+                <div>Sapporo: 011</div>
+              </div>
+            </div>
 
-          <h3>Phone Number Validation</h3>
-          <p>
-            When validating Japanese phone numbers, consider these rules:
-          </p>
-          <ul>
-            <li>Mobile numbers must start with 070, 080, or 090</li>
-            <li>Total length should be 11 digits (excluding country code)</li>
-            <li>Area codes vary in length from 2-5 digits</li>
-            <li>No spaces or special characters allowed</li>
-          </ul>
+            <div className="bg-base-200 p-8 rounded-xl shadow-lg mb-8">
+              <h3 className="text-xl font-semibold mb-6 text-primary">
+                Common Use Cases
+              </h3>
+              <ul className="list-disc pl-6 space-y-2 text-base-content/80">
+                <li>Testing applications for the Japanese market</li>
+                <li>Validating Japanese phone formats</li>
+                <li>Creating test data for Asian market applications</li>
+                <li>Testing international SMS services</li>
+                <li>Database testing with Japanese formats</li>
+                <li>Mobile app development for Japan</li>
+              </ul>
+            </div>
+
+            <div className="bg-base-200 p-8 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-6 text-primary">
+                Phone Number Validation
+              </h3>
+              <ul className="list-disc pl-6 space-y-2 text-base-content/80">
+                <li>Mobile numbers must start with 070, 080, or 090</li>
+                <li>Total length should be 11 digits (excluding country code)</li>
+                <li>Area codes vary in length from 2-5 digits</li>
+                <li>No spaces or special characters allowed</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </main>

@@ -12,21 +12,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://random-phone-numbers.com"),
-  title: "Random Phone Numbers - Free Phone Number Generator Tool",
-  description:
-    "Generate random phone numbers for multiple countries. Create fake phone numbers for testing. Features include bulk generation, US/UK/international phone numbers, customizable formats and Excel export.",
-  keywords: [
-    "random phone numbers",
-    "phone number generator",
-    "random phone number",
-    "fake phone number generator",
-    "phone number maker",
-    "usa phone number generator",
-    "us phone number generator",
-    "random usa phone number",
-    "fake phone number us",
-    "generate telephone number",
-  ].join(", "),
   authors: [{ name: "Ethan Ye" }],
   creator: "Ethan Ye",
   publisher: "Ethan Ye",
@@ -38,9 +23,9 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Random Phone Numbers - Free Phone Number Generator Tool",
+    title: "Random Phone Numbers - Free Phone Number Generator",
     description:
-      "Generate random phone numbers for multiple countries. Create fake phone numbers for testing. Features include bulk generation, US/UK/international phone numbers and Excel export.",
+      "Generate random phone numbers for multiple countries. Features include bulk generation, US/UK/international phone numbers and Excel export.",
     type: "website",
     locale: "en_US",
     siteName: "Random Phone Numbers",
@@ -59,14 +44,13 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-
-  viewport: {
-    // 移动端视口配置
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
   category: "technology", // 网站分类
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 const jsonLd = {
@@ -75,7 +59,7 @@ const jsonLd = {
   "@type": "WebApplication", // 定义类型为web应用
   name: "Random Phone Numbers - Free Phone Number Generator",
   description:
-  "Generate random phone numbers for multiple countries. Create fake phone numbers for testing. Features include bulk generation, US/UK/international phone numbers, customizable formats and Excel export.",
+  "Generate random phone numbers for multiple countries.Features include bulk generation, US/UK/international phone numbers, customizable formats and Excel export.",
   applicationCategory: "UtilityApplication",
   operatingSystem: "Any",
   url: "https://random-phone-numbers.com",

@@ -6,18 +6,7 @@ import { getCountryInfo } from '@/utils/countryUtils'
 
 export const metadata: Metadata = {
   title: 'Canada Phone Number Generator - Generate Random Canadian Phone Numbers',
-  description: 'Generate random Canadian phone numbers with our free generator. Create phone numbers with proper area codes for all provinces and territories. Perfect for testing and development.',
-  keywords: [
-    'canada phone number generator',
-    'canadian phone numbers',
-    'random canada numbers',
-    'toronto phone numbers',
-    'vancouver phone numbers',
-    'montreal phone numbers',
-    'test phone numbers canada',
-    'fake canadian numbers',
-    'canadian area codes'
-  ].join(', ')
+  description: 'Canada Phone Number Generator. Create phone numbers with proper area codes for all provinces and territories. Perfect for testing and development.'
 }
 
 export default function CanadaPage() {
@@ -49,55 +38,72 @@ export default function CanadaPage() {
       {/* Country Info Section */}
       <section className="py-12 bg-base-200">
         <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-semibold mb-8">
             About Canadian Phone Numbers
           </h2>
           <CountryInfo country={country} />
         </div>
+        </div>
       </section>
 
-      {/* Additional Info for SEO */}
-      <section className="py-12">
-        <div className="container mx-auto px-4 prose max-w-3xl">
-          <h2>Canadian Phone Number Format Guide</h2>
-          <p>
-            Canadian phone numbers follow the North American Numbering Plan (NANP):
-          </p>
-          <ul>
-            <li>Format: +1 (XXX) XXX-XXXX</li>
-            <li>Major area codes: 416/647 (Toronto), 604 (Vancouver)</li>
-            <li>Quebec area codes: 514 (Montreal), 418 (Quebec City)</li>
-            <li>All numbers are 10 digits (excluding country code)</li>
-          </ul>
-          
-          <h3>Popular Area Codes</h3>
-          <ul>
-            <li>416/647/437 - Greater Toronto Area</li>
-            <li>604/778 - Greater Vancouver Area</li>
-            <li>514/438 - Montreal</li>
-            <li>403/587 - Calgary</li>
-            <li>613/343 - Ottawa</li>
-            <li>905/289 - Greater Toronto Area (Suburbs)</li>
-          </ul>
+            {/* Additional Info for SEO */}
+            <section className="py-16 bg-base-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-base-200 p-8 rounded-xl shadow-lg mb-8">
+              <h2 className="text-2xl font-bold mb-6 text-primary">
+                Canadian Phone Number Format Guide
+              </h2>
+              <p className="text-base-content/80 mb-4">
+                Canadian phone numbers follow the North American Numbering Plan (NANP):
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-base-content/80">
+                <li>Format: +1 (XXX) XXX-XXXX</li>
+                <li>Major area codes: 416/647 (Toronto), 604 (Vancouver)</li>
+                <li>Quebec area codes: 514 (Montreal), 418 (Quebec City)</li>
+                <li>All numbers are 10 digits (excluding country code)</li>
+              </ul>
+            </div>
 
-          <h3>Common Applications</h3>
-          <p>
-            Our Canadian phone number generator is frequently used for:
-          </p>
-          <ul>
-            <li>Software development and testing</li>
-            <li>CRM system implementation</li>
-            <li>E-commerce platform testing</li>
-            <li>Mobile app development</li>
-            <li>Database testing</li>
-          </ul>
+            <div className="bg-base-200 p-8 rounded-xl shadow-lg mb-8">
+              <h3 className="text-xl font-semibold mb-6 text-primary">
+                Popular Area Codes
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-base-content/80">
+                <div>416/647/437 - Greater Toronto Area</div>
+                <div>604/778 - Greater Vancouver Area</div>
+                <div>514/438 - Montreal</div>
+                <div>403/587 - Calgary</div>
+                <div>613/343 - Ottawa</div>
+                <div>905/289 - Greater Toronto Area (Suburbs)</div>
+              </div>
+            </div>
 
-          <h3>Additional Information</h3>
-          <p>
-            All generated numbers comply with the Canadian Numbering Plan and follow 
-            CRTC (Canadian Radio-television and Telecommunications Commission) guidelines. 
-            These numbers are for testing purposes only.
-          </p>
+            <div className="bg-base-200 p-8 rounded-xl shadow-lg mb-8">
+              <h3 className="text-xl font-semibold mb-6 text-primary">
+                Common Applications
+              </h3>
+              <ul className="list-disc pl-6 space-y-2 text-base-content/80">
+                <li>Software development and testing</li>
+                <li>CRM system implementation</li>
+                <li>E-commerce platform testing</li>
+                <li>Mobile app development</li>
+                <li>Database testing</li>
+              </ul>
+            </div>
+
+            <div className="bg-base-200 p-8 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-6 text-primary">
+                Additional Information
+              </h3>
+              <p className="text-base-content/80">
+                All generated numbers comply with the Canadian Numbering Plan and follow 
+                CRTC (Canadian Radio-television and Telecommunications Commission) guidelines. 
+                These numbers are for testing purposes only.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>

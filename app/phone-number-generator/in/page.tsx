@@ -6,14 +6,7 @@ import { getCountryInfo } from '@/utils/countryUtils'
 
 export const metadata: Metadata = {
   title: 'Indian Phone Number Generator - Generate Random India Phone Numbers',
-  description: 'Generate random Indian phone numbers with our free generator. Create mobile numbers with valid carrier prefixes and proper formats for India.',
-  keywords: [
-    'indian phone number generator',
-    'india phone numbers',
-    'random indian phone numbers',
-    'fake indian phone numbers',
-    'india mobile numbers'
-  ].join(', ')
+  description: 'Indian Phone Number Generator. Create mobile numbers with valid carrier prefixes and proper formats for India.'
 }
 
 export default function INPage() {
@@ -42,57 +35,74 @@ export default function INPage() {
         </div>
       </section>
 
-      {/* Country Info Section */}
-      <section className="py-12 bg-base-200">
+            {/* Country Info Section */}
+            <section className="py-12 bg-base-200">
         <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-semibold mb-8">
             About Indian Phone Numbers
           </h2>
           <CountryInfo country={country} />
+          </div>
         </div>
       </section>
 
       {/* Additional Info for SEO */}
-      <section className="py-12">
-        <div className="container mx-auto px-4 prose max-w-3xl">
-          <h2>Indian Phone Number Format Guide</h2>
-          <p>
-            Indian mobile phone numbers follow a specific structure:
-          </p>
-          <ul>
-            <li>All numbers start with +91 (country code)</li>
-            <li>Mobile numbers are 10 digits long</li>
-            <li>First digit is always between 6-9</li>
-            <li>Different prefixes for different carriers and circles</li>
-          </ul>
-          
-          <h3>Mobile Carrier Prefixes</h3>
-          <ul>
-            <li>Jio: 89, 90, 70, 71, 72</li>
-            <li>Airtel: 98, 99, 80, 81, 82</li>
-            <li>Vodafone: 97, 96, 95, 91</li>
-            <li>BSNL: 94, 93, 91, 92</li>
-            <li>Vi (formerly Vodafone Idea): 70, 71, 72</li>
-            <li>MTNL: 91 (for Delhi and Mumbai region)</li>
-          </ul>
+      <section className="py-16 bg-base-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-base-200 p-8 rounded-xl shadow-lg mb-8">
+              <h2 className="text-2xl font-bold mb-6 text-primary">
+                Indian Phone Number Format Guide
+              </h2>
+              <p className="text-base-content/80 mb-4">
+                Indian mobile phone numbers follow a specific structure:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-base-content/80">
+                <li>All numbers start with +91 (country code)</li>
+                <li>Mobile numbers are 10 digits long</li>
+                <li>First digit is always between 6-9</li>
+                <li>Different prefixes for different carriers and circles</li>
+              </ul>
+            </div>
 
-          <h3>Other Phone Number Types</h3>
-          <ul>
-            <li>Fixed line numbers (landlines) may begin with area codes like 11, 22, 33, etc.</li>
-            <li>VoIP and virtual numbers start with 8 (especially for businesses or non-geographic services)</li>
-          </ul>
+            <div className="bg-base-200 p-8 rounded-xl shadow-lg mb-8">
+              <h3 className="text-xl font-semibold mb-6 text-primary">
+                Mobile Carrier Prefixes
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-base-content/80">
+                <div>Jio: 89, 90, 70, 71, 72</div>
+                <div>Airtel: 98, 99, 80, 81, 82</div>
+                <div>Vodafone: 97, 96, 95, 91</div>
+                <div>BSNL: 94, 93, 91, 92</div>
+                <div>Vi (formerly Vodafone Idea): 70, 71, 72</div>
+                <div>MTNL: 91 (for Delhi and Mumbai region)</div>
+              </div>
+            </div>
 
-          <h3>Common Use Cases</h3>
-          <p>
-            Our Indian phone number generator is perfect for:
-          </p>
-          <ul>
-            <li>Testing applications for the Indian market</li>
-            <li>Validating Indian phone formats</li>
-            <li>Creating test data for Asian market applications</li>
-            <li>Testing international SMS services</li>
-            <li>Database testing with Indian formats</li>
-          </ul>
+            <div className="bg-base-200 p-8 rounded-xl shadow-lg mb-8">
+              <h3 className="text-xl font-semibold mb-6 text-primary">
+                Other Phone Number Types
+              </h3>
+              <ul className="list-disc pl-6 space-y-2 text-base-content/80">
+                <li>Fixed line numbers (landlines) may begin with area codes like 11, 22, 33, etc.</li>
+                <li>VoIP and virtual numbers start with 8 (especially for businesses or non-geographic services)</li>
+              </ul>
+            </div>
+
+            <div className="bg-base-200 p-8 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-6 text-primary">
+                Common Use Cases
+              </h3>
+              <ul className="list-disc pl-6 space-y-2 text-base-content/80">
+                <li>Testing applications for the Indian market</li>
+                <li>Validating Indian phone formats</li>
+                <li>Creating test data for Asian market applications</li>
+                <li>Testing international SMS services</li>
+                <li>Database testing with Indian formats</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </main>

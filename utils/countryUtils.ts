@@ -26,7 +26,7 @@ export interface CountryInfo {
 // 添加国家详细信息映射
 const countryDetails: Record<string, Partial<CountryInfo>> = {
   us: {
-    example: '+1 555 123 4567',
+    example: '+1 213 123 4567',
     description: 'US phone numbers are 10 digits long: 3-digit area code + 7-digit local number.'
   },
   uk: {

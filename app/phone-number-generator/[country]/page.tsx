@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${countryInfo.name} Phone Number Generator - Random ${countryInfo.name} Numbers`,
-    description: `Generate random ${countryInfo.name} phone numbers with our free generator. Create phone numbers with proper ${countryInfo.name} formats and area codes.`,
+    description: `${countryInfo.name} Phone Number Generator. Create phone numbers with proper ${countryInfo.name} formats and area codes.`,
     keywords: [
       `${countryInfo.name.toLowerCase()} phone number generator`,
       `random ${countryInfo.name.toLowerCase()} phone numbers`,
