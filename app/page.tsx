@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import ThemeController from "@/components/themeController";
 // import CountryGrid from "@/components/CountryGrid";
 import Link from "next/link";
-import { Suspense } from 'react';
+import { Suspense } from "react";
 // 定义热门国家数据
 const popularCountries = [
   {
@@ -92,8 +92,10 @@ export default function Home() {
       {/* Hero Section - 增加视觉冲击力 */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-base-200 to-base-100">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6 md:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-            Random Phone Numbers
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6 md:mb-8">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary inline-block">
+              Random Phone Numbers
+            </span>
           </h1>
           <p className="text-lg md:text-2xl text-center text-base-content/80 max-w-3xl mx-auto mb-8 md:mb-12">
             Generate random phone numbers for multiple countries with proper

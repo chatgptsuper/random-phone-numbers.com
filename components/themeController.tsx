@@ -9,7 +9,11 @@ export default function ThemeController() {
     <div className="fixed top-4 right-4 z-50">
       <button
         onClick={toggleTheme}
-        className="theme-toggle-btn"
+        onTouchEnd={(e) => {
+          e.preventDefault(); // 防止触摸事件冒泡
+          toggleTheme();
+        }}
+        className="theme-toggle-btn p-2 transition-all duration-300"
         aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
       >
         {theme === 'light' ? (
@@ -19,6 +23,7 @@ export default function ThemeController() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
+            className="w-6 h-6"
           >
             <path
               strokeLinecap="round"
@@ -33,6 +38,7 @@ export default function ThemeController() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
+            className="w-6 h-6"
           >
             <path
               strokeLinecap="round"
