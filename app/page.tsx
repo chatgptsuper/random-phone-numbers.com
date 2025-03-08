@@ -249,13 +249,13 @@ export default function Home() {
             Frequently Asked Questions
           </h2>
           <div className="max-w-3xl mx-auto space-y-6">
-            <div className="collapse collapse-arrow bg-base-100 rounded-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-md">
-              <input type="checkbox" />
-              <div className="collapse-title text-xl font-medium bg-base-100 transition-all duration-300">
+            <div className="collapse collapse-plus bg-base-100 rounded-lg overflow-hidden shadow-sm">
+              <input type="radio" name="faq-accordion" className="peer" /> 
+              <div className="collapse-title text-xl font-medium p-4">
                 Are these phone numbers real?
               </div>
-              <div className="collapse-content bg-base-100 transition-all duration-300 ease-in-out">
-                <p className="pt-4">
+              <div className="collapse-content"> 
+                <p className="pt-2 pb-4">
                   No, these are randomly generated numbers following each
                   country&apos;s phone number format rules. They should not be
                   used to contact real people.
@@ -263,26 +263,26 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="collapse collapse-arrow bg-base-100 rounded-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-md">
-              <input type="checkbox" />
-              <div className="collapse-title text-xl font-medium bg-base-100 transition-all duration-300">
+            <div className="collapse collapse-plus bg-base-100 rounded-lg overflow-hidden shadow-sm">
+              <input type="radio" name="faq-accordion" className="peer" />
+              <div className="collapse-title text-xl font-medium p-4">
                 Can I use these phone numbers for testing?
               </div>
-              <div className="collapse-content bg-base-100 transition-all duration-300 ease-in-out">
-                <p className="pt-4">
+              <div className="collapse-content">
+                <p className="pt-2 pb-4">
                   Yes! These numbers are perfect for testing applications,
                   forms, and databases that need to handle phone numbers.
                 </p>
               </div>
             </div>
 
-            <div className="collapse collapse-arrow bg-base-100 rounded-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-md">
-              <input type="checkbox" />
-              <div className="collapse-title text-xl font-medium bg-base-100 transition-all duration-300">
+            <div className="collapse collapse-plus bg-base-100 rounded-lg overflow-hidden shadow-sm">
+              <input type="radio" name="faq-accordion" className="peer" />
+              <div className="collapse-title text-xl font-medium p-4">
                 How to generate a fake phone number?
               </div>
-              <div className="collapse-content bg-base-100 transition-all duration-300 ease-in-out">
-                <p className="pt-4">
+              <div className="collapse-content">
+                <p className="pt-2 pb-4">
                   Simply select your desired country from our list, choose how
                   many numbers you need, and click the generate button. You can
                   customize the format and export the results to Excel if
@@ -291,13 +291,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="collapse collapse-arrow bg-base-100 rounded-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-md">
-              <input type="checkbox" />
-              <div className="collapse-title text-xl font-medium bg-base-100 transition-all duration-300">
+            <div className="collapse collapse-plus bg-base-100 rounded-lg overflow-hidden shadow-sm">
+              <input type="radio" name="faq-accordion" className="peer" />
+              <div className="collapse-title text-xl font-medium p-4">
                 How to find random phone numbers for different countries?
               </div>
-              <div className="collapse-content bg-base-100 transition-all duration-300 ease-in-out">
-                <p className="pt-4">
+              <div className="collapse-content">
+                <p className="pt-2 pb-4">
                   Our tool supports multiple countries including US, UK, China,
                   India, and many more. Navigate to the country selection
                   section, choose your desired country, and generate numbers
@@ -306,13 +306,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="collapse collapse-arrow bg-base-100 rounded-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-md">
-              <input type="checkbox" />
-              <div className="collapse-title text-xl font-medium bg-base-100 transition-all duration-300">
+            <div className="collapse collapse-plus bg-base-100 rounded-lg overflow-hidden shadow-sm">
+              <input type="radio" name="faq-accordion" className="peer" />
+              <div className="collapse-title text-xl font-medium p-4">
                 Can I generate phone numbers in bulk?
               </div>
-              <div className="collapse-content bg-base-100 transition-all duration-300 ease-in-out">
-                <p className="pt-4">
+              <div className="collapse-content">
+                <p className="pt-2 pb-4">
                   Yes, our tool allows you to generate multiple phone numbers at
                   once. You can specify the quantity needed and export them all
                   to Excel with a single click.
@@ -320,13 +320,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="collapse collapse-arrow bg-base-100 rounded-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-md">
-              <input type="checkbox" />
-              <div className="collapse-title text-xl font-medium bg-base-100 transition-all duration-300">
+            <div className="collapse collapse-plus bg-base-100 rounded-lg overflow-hidden shadow-sm">
+              <input type="radio" name="faq-accordion" className="peer" />
+              <div className="collapse-title text-xl font-medium p-4">
                 Can I export the generated phone numbers?
               </div>
-              <div className="collapse-content bg-base-100 transition-all duration-300 ease-in-out">
-                <p className="pt-4">
+              <div className="collapse-content">
+                <p className="pt-2 pb-4">
                   Yes, you can easily export all generated phone numbers to
                   Excel format or copy them directly to your clipboard. After
                   generating the numbers, simply click the &quot;Export&quot;
