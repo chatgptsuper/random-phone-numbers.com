@@ -2,7 +2,7 @@
 
 import { Metadata } from "next";
 import ThemeController from "@/components/themeController";
-import CountryGrid from "@/components/CountryGrid";
+// import CountryGrid from "@/components/CountryGrid";
 import Link from "next/link";
 import { Suspense } from 'react';
 // 定义热门国家数据
