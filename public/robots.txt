@@ -1,17 +1,10 @@
-# Google crawlers
-User-agent: Googlebot
-Allow: /
-User-agent: Googlebot-Image
-Allow: /
-
-# All other crawlers
+# Allow all search engines
 User-agent: *
 Allow: /
 
-# Common parameters
+# Protect system directories
 Disallow: /api/
 Disallow: /_next/
-Disallow: /*?
 
 # Sitemap location
-Sitemap: https://random-phone-numbers.com/sitemap.xml 
+Sitemap: https://random-phone-numbers.com/sitemap.xml
