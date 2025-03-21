@@ -3,7 +3,7 @@ import ThemeController from '@/components/themeController'
 import MainGenerator from '@/components/mainGenerator'
 import CountryInfo from '@/components/CountryInfo'
 import { getCountryInfo } from '@/utils/countryUtils'
-
+import Script from "next/script";
 export const metadata: Metadata = {
   title: 'Ghana Phone Number Generator - Generate Random Ghana Phone Numbers',
   description: 'Ghana Phone Number Generator. Create MTN, Vodafone, AirtelTigo numbers with proper formats for testing and development.'
@@ -32,6 +32,20 @@ export default function GhanaPage() {
       <section className="py-12">
         <div className="container mx-auto px-4">
           <MainGenerator defaultCountry="GH" />
+        </div>
+      </section>
+
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-center">
+            <Script
+              async
+              data-cfasync="false"
+              src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
+              strategy="lazyOnload"
+            />
+            <div id="container-e600160624986baf8eabc5850c18a018"></div>
+          </div>
         </div>
       </section>
 

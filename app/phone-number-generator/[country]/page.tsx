@@ -54,7 +54,7 @@ export default async function CountryPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Country Info Section */}
+      {/* tion */}
       <section className="py-12 bg-base-200">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold mb-8">
