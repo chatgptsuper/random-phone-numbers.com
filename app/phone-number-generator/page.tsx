@@ -4,7 +4,6 @@ import CountryGrid from "@/components/CountryGrid";
 import Link from "next/link";
 import CountrySearch from "@/components/CountrySearch";
 import { Suspense } from 'react';
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Random Phone Numbers - Choose A Country To Generate Random Phone Numbers",
@@ -31,23 +30,6 @@ export default function PhoneNumberGeneratorPage() {
           <p className="text-lg text-base-content/80 max-w-2xl mx-auto">
             Select a country to generate random phone numbers with proper formats
           </p>
-        </div>
-      </section>
-
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center">
-            <Script
-              async
-              data-cfasync="false"
-              src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
-              strategy="afterInteractive"
-            />
-            <div
-              id="container-e600160624986baf8eabc5850c18a018"
-              className="w-full"
-            ></div>
-          </div>
         </div>
       </section>
 
@@ -95,23 +77,6 @@ export default function PhoneNumberGeneratorPage() {
                 Export generated numbers to Excel or copy directly to clipboard
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center">
-            <Script
-              async
-              data-cfasync="false"
-              src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
-              strategy="afterInteractive"
-            />
-            <div
-              id="container-e600160624986baf8eabc5850c18a018"
-              className="w-full"
-            ></div>
           </div>
         </div>
       </section>

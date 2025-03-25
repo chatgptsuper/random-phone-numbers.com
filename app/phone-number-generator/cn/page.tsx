@@ -1,22 +1,21 @@
-import { Metadata } from "next";
-import ThemeController from "@/components/themeController";
-import MainGenerator from "@/components/mainGenerator";
-import CountryInfo from "@/components/CountryInfo";
-import { getCountryInfo } from "@/utils/countryUtils";
+import { Metadata } from 'next'
+import ThemeController from '@/components/themeController'
+import MainGenerator from '@/components/mainGenerator'
+import CountryInfo from '@/components/CountryInfo'
+import { getCountryInfo } from '@/utils/countryUtils'
 import Script from "next/script";
 export const metadata: Metadata = {
-  title: "Chinese Phone Number Generator - Generate Random China Phone Numbers",
-  description:
-    "Chinese Phone Number Generator. Create mobile numbers with valid carrier prefixes and proper formats for China.",
-};
+  title: 'Chinese Phone Number Generator - Generate Random China Phone Numbers',
+  description: 'Chinese Phone Number Generator. Create mobile numbers with valid carrier prefixes and proper formats for China.'
+}
 
 export default function CNPage() {
-  const country = getCountryInfo("cn");
-
+  const country = getCountryInfo('cn')
+  
   return (
     <main className="min-h-screen w-full relative">
       <ThemeController />
-
+      
       {/* Hero Section */}
       <section className="py-12 bg-base-200">
         <div className="container mx-auto px-4">
@@ -24,26 +23,8 @@ export default function CNPage() {
             Chinese Phone Number Generator
           </h1>
           <p className="text-xl text-center text-base-content/80 max-w-2xl mx-auto">
-            Generate random Chinese phone numbers with proper carrier prefixes
-            and formats.
+            Generate random Chinese phone numbers with proper carrier prefixes and formats.
           </p>
-        </div>
-      </section>
-
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center">
-            <Script
-              async
-              data-cfasync="false"
-              src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
-              strategy="afterInteractive"
-            />
-            <div
-              id="container-e600160624986baf8eabc5850c18a018"
-              className="w-full"
-            ></div>
-          </div>
         </div>
       </section>
 
@@ -54,37 +35,24 @@ export default function CNPage() {
         </div>
       </section>
 
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center">
-            <Script
-              async
-              data-cfasync="false"
-              src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
-              strategy="afterInteractive"
-            />
-            <div
-              id="container-e600160624986baf8eabc5850c18a018"
-              className="w-full"
-            ></div>
-          </div>
-        </div>
-      </section>
+
+
+
 
       {/* Country Info Section */}
       <section className="py-12 bg-base-200">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-semibold mb-8">
-              About Chinese Phone Numbers
-            </h2>
-            <CountryInfo country={country} />
-          </div>
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-semibold mb-8">
+            About Chinese Phone Numbers
+          </h2>
+          <CountryInfo country={country} />
+        </div>
         </div>
       </section>
 
-      {/* Additional Info for SEO */}
-      <section className="py-16 bg-base-100">
+            {/* Additional Info for SEO */}
+            <section className="py-16 bg-base-100">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="bg-base-200 p-8 rounded-xl shadow-lg mb-8">
@@ -97,9 +65,7 @@ export default function CNPage() {
               <ul className="list-disc pl-6 space-y-2 text-base-content/80">
                 <li>All numbers start with +86 (country code)</li>
                 <li>Mobile numbers are 11 digits long</li>
-                <li>
-                  Starts with carrier-specific prefixes (13x, 14x, 15x, etc.)
-                </li>
+                <li>Starts with carrier-specific prefixes (13x, 14x, 15x, etc.)</li>
                 <li>Different prefixes represent different carriers</li>
               </ul>
             </div>
@@ -131,22 +97,6 @@ export default function CNPage() {
           </div>
         </div>
       </section>
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center">
-            <Script
-              async
-              data-cfasync="false"
-              src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
-              strategy="afterInteractive"
-            />
-            <div
-              id="container-e600160624986baf8eabc5850c18a018"
-              className="w-full"
-            ></div>
-          </div>
-        </div>
-      </section>
     </main>
-  );
-}
+  )
+} 

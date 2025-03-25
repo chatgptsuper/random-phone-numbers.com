@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import ThemeController from "@/components/themeController";
 import Link from "next/link";
-import Script from "next/script";
+
 export const metadata: Metadata = {
   title: "About Random Phone Numbers - Free Phone Number Generator",
   description:
@@ -23,23 +23,6 @@ export default function AboutPage() {
             Providing high-quality random phone number generation tools for
             developers and testers
           </p>
-        </div>
-      </section>
-
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center">
-            <Script
-              async
-              data-cfasync="false"
-              src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
-              strategy="afterInteractive"
-            />
-            <div
-              id="container-e600160624986baf8eabc5850c18a018"
-              className="w-full"
-            ></div>
-          </div>
         </div>
       </section>
 

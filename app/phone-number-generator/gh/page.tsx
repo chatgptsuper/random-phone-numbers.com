@@ -1,22 +1,21 @@
-import { Metadata } from "next";
-import ThemeController from "@/components/themeController";
-import MainGenerator from "@/components/mainGenerator";
-import CountryInfo from "@/components/CountryInfo";
-import { getCountryInfo } from "@/utils/countryUtils";
+import { Metadata } from 'next'
+import ThemeController from '@/components/themeController'
+import MainGenerator from '@/components/mainGenerator'
+import CountryInfo from '@/components/CountryInfo'
+import { getCountryInfo } from '@/utils/countryUtils'
 import Script from "next/script";
 export const metadata: Metadata = {
-  title: "Ghana Phone Number Generator - Generate Random Ghana Phone Numbers",
-  description:
-    "Ghana Phone Number Generator. Create MTN, Vodafone, AirtelTigo numbers with proper formats for testing and development.",
-};
+  title: 'Ghana Phone Number Generator - Generate Random Ghana Phone Numbers',
+  description: 'Ghana Phone Number Generator. Create MTN, Vodafone, AirtelTigo numbers with proper formats for testing and development.'
+}
 
 export default function GhanaPage() {
-  const country = getCountryInfo("gh");
-
+  const country = getCountryInfo('gh')
+  
   return (
     <main className="min-h-screen w-full relative">
       <ThemeController />
-
+      
       {/* Hero Section */}
       <section className="py-12 bg-base-200">
         <div className="container mx-auto px-4">
@@ -24,26 +23,8 @@ export default function GhanaPage() {
             Ghana Phone Number Generator
           </h1>
           <p className="text-xl text-center text-base-content/80 max-w-2xl mx-auto">
-            Generate random Ghana phone numbers with valid network prefixes and
-            proper formats.
+            Generate random Ghana phone numbers with valid network prefixes and proper formats.
           </p>
-        </div>
-      </section>
-
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center">
-            <Script
-              async
-              data-cfasync="false"
-              src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
-              strategy="afterInteractive"
-            />
-            <div
-              id="container-e600160624986baf8eabc5850c18a018"
-              className="w-full"
-            ></div>
-          </div>
         </div>
       </section>
 
@@ -54,20 +35,22 @@ export default function GhanaPage() {
         </div>
       </section>
 
+
+
       {/* Country Info Section */}
       <section className="py-12 bg-base-200">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-semibold mb-8">
-              About Ghana Phone Numbers
-            </h2>
-            <CountryInfo country={country} />
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-semibold mb-8">
+            About Ghana Phone Numbers
+          </h2>
+          <CountryInfo country={country} />
           </div>
         </div>
       </section>
 
-      {/* Additional Info for SEO */}
-      <section className="py-16 bg-base-100">
+            {/* Additional Info for SEO */}
+            <section className="py-16 bg-base-100">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="bg-base-200 p-8 rounded-xl shadow-lg mb-8">
@@ -75,17 +58,14 @@ export default function GhanaPage() {
                 Ghana Phone Number Format Guide
               </h2>
               <p className="text-base-content/80 mb-4">
-                Ghana phone numbers follow specific formats based on the mobile
-                network operator:
+                Ghana phone numbers follow specific formats based on the mobile network operator:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-base-content/80">
                 <li>MTN: Starts with 024, 054, 055</li>
                 <li>Vodafone: Starts with 020, 050</li>
                 <li>AirtelTigo: Starts with 027, 057</li>
                 <li>Glo: Starts with 026, 056, 058, 059</li>
-                <li>
-                  All numbers are 9 digits long (not counting the country code)
-                </li>
+                <li>All numbers are 9 digits long (not counting the country code)</li>
               </ul>
             </div>
 
@@ -97,9 +77,7 @@ export default function GhanaPage() {
                 <div>MTN - Largest network in Ghana</div>
                 <div>Vodafone - Second largest operator</div>
                 <div>AirtelTigo - Third major network</div>
-                <div>
-                  Glo - A major operator in Ghana, with a growing presence
-                </div>
+                <div>Glo - A major operator in Ghana, with a growing presence</div>
               </div>
             </div>
 
@@ -119,23 +97,6 @@ export default function GhanaPage() {
           </div>
         </div>
       </section>
-
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center">
-            <Script
-              async
-              data-cfasync="false"
-              src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
-              strategy="afterInteractive"
-            />
-            <div
-              id="container-e600160624986baf8eabc5850c18a018"
-              className="w-full"
-            ></div>
-          </div>
-        </div>
-      </section>
     </main>
-  );
-}
+  )
+} 

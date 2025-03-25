@@ -28,26 +28,14 @@ export default function CanadaPage() {
         </div>
       </section>
 
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center">
-            <Script
-              async
-              data-cfasync="false"
-              src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
-              strategy="afterInteractive"
-            />
-            <div id="container-e600160624986baf8eabc5850c18a018" className="w-full"></div>
-          </div>
-        </div>
-      </section>
-
       {/* Generator Section */}
       <section className="py-12">
         <div className="container mx-auto px-4">
           <MainGenerator defaultCountry="CA" />
         </div>
       </section>
+
+
 
       {/* Country Info Section */}
       <section className="py-12 bg-base-200">
@@ -117,23 +105,6 @@ export default function CanadaPage() {
                 These numbers are for testing purposes only.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center">
-            <Script
-              async
-              data-cfasync="false"
-              src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
-              strategy="afterInteractive"
-            />
-            <div
-              id="container-e600160624986baf8eabc5850c18a018"
-              className="w-full"
-            ></div>
           </div>
         </div>
       </section>

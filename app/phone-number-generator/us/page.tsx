@@ -30,23 +30,6 @@ export default function USPage() {
         </div>
       </section>
 
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center">
-            <Script
-              async
-              data-cfasync="false"
-              src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
-              strategy="afterInteractive"
-            />
-            <div
-              id="container-e600160624986baf8eabc5850c18a018"
-              className="w-full"
-            ></div>
-          </div>
-        </div>
-      </section>
-
       {/* Generator Section */}
       <section className="py-12">
         <div className="container mx-auto px-4">
@@ -54,14 +37,16 @@ export default function USPage() {
         </div>
       </section>
 
+
+
       {/* Country Info Section */}
       <section className="py-12 bg-base-200">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-semibold mb-8">
-              About US Phone Numbers
-            </h2>
-            <CountryInfo country={country} />
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-semibold mb-8">
+            About US Phone Numbers
+          </h2>
+          <CountryInfo country={country} />
           </div>
         </div>
       </section>
@@ -75,8 +60,7 @@ export default function USPage() {
                 US Phone Number Format Guide
               </h2>
               <p className="text-base-content/80 mb-4">
-                American phone numbers follow a standardized format that
-                consists of:
+                American phone numbers follow a standardized format that consists of:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-base-content/80">
                 <li>A 3-digit area code (e.g., 212 for New York City)</li>
@@ -115,23 +99,6 @@ export default function USPage() {
                 <li>Database testing with US phone formats</li>
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center">
-            <Script
-              async
-              data-cfasync="false"
-              src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
-              strategy="afterInteractive"
-            />
-            <div
-              id="container-e600160624986baf8eabc5850c18a018"
-              className="w-full"
-            ></div>
           </div>
         </div>
       </section>
