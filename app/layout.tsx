@@ -58,7 +58,7 @@ const jsonLd = {
   "@type": "WebApplication", // 定义类型为web应用
   name: "Random Phone Numbers - Free Phone Number Generator",
   description:
-  "Generate random phone numbers for multiple countries.Features include bulk generation, US/UK/international phone numbers, customizable formats and Excel export.",
+    "Generate random phone numbers for multiple countries.Features include bulk generation, US/UK/international phone numbers, customizable formats and Excel export.",
   applicationCategory: "UtilityApplication",
   operatingSystem: "Any",
   url: "https://random-phone-numbers.com",
@@ -96,9 +96,21 @@ export default function RootLayout({
         <link rel="icon" href="/webico.ico" />
         <link rel="canonical" href="https://random-phone-numbers.com" />
         <meta name="robots" content="index,follow" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5237772343297981"
-          crossOrigin="anonymous"></script>
-          <meta name="google-adsense-account" content="ca-pub-5237772343297981"></meta>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5237772343297981"
+          crossOrigin="anonymous"
+        ></Script>
+        <Script
+          src="https://kulroakonsu.net/88/tag.min.js"
+          data-zone="138777"
+          async
+          data-cfasync="false"
+        ></Script>
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-5237772343297981"
+        ></meta>
       </head>
       <body
         className={`min-h-screen bg-base-100 text-base-content transition-colors duration-300 ${inter.className}`}
