@@ -101,12 +101,6 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5237772343297981"
           crossOrigin="anonymous"
         ></Script>
-        <Script
-          src="https://kulroakonsu.net/88/tag.min.js"
-          data-zone="138777"
-          async
-          data-cfasync="false"
-        ></Script>
         <meta
           name="google-adsense-account"
           content="ca-pub-5237772343297981"
@@ -115,6 +109,12 @@ export default function RootLayout({
       <body
         className={`min-h-screen bg-base-100 text-base-content transition-colors duration-300 ${inter.className}`}
       >
+        <Script
+          src="https://kulroakonsu.net/88/tag.min.js"
+          data-zone="138777"
+          async
+          data-cfasync="false"
+        ></Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
