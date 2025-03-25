@@ -3,7 +3,7 @@ import ThemeController from '@/components/themeController'
 import MainGenerator from '@/components/mainGenerator'
 import CountryInfo from '@/components/CountryInfo'
 import { getCountryInfo } from '@/utils/countryUtils'
-import Script from "next/script";
+
 export const metadata: Metadata = {
   title: 'Ghana Phone Number Generator - Generate Random Ghana Phone Numbers',
   description: 'Ghana Phone Number Generator. Create MTN, Vodafone, AirtelTigo numbers with proper formats for testing and development.'

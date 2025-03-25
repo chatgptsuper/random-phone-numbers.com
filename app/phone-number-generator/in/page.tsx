@@ -3,7 +3,7 @@ import ThemeController from '@/components/themeController'
 import MainGenerator from '@/components/mainGenerator'
 import CountryInfo from '@/components/CountryInfo'
 import { getCountryInfo } from '@/utils/countryUtils'
-import Script from "next/script";
+
 export const metadata: Metadata = {
   title: 'Indian Phone Number Generator - Generate Random India Phone Numbers',
   description: 'Indian Phone Number Generator. Create mobile numbers with valid carrier prefixes and proper formats for India.'

@@ -3,7 +3,7 @@ import ThemeController from '@/components/themeController'
 import MainGenerator from '@/components/mainGenerator'
 import CountryInfo from '@/components/CountryInfo'
 import { getCountryInfo } from '@/utils/countryUtils'
-import Script from "next/script";
+
 export const metadata: Metadata = {
   title: 'Brazil Phone Number Generator - Generate Random Brazilian Phone Numbers',
   description: 'Brazil Phone Number Generator. Create mobile and landline numbers with proper area codes for testing. Support for all Brazilian states and major cities.'

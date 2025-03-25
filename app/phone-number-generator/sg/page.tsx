@@ -3,7 +3,7 @@ import ThemeController from '@/components/themeController'
 import MainGenerator from '@/components/mainGenerator'
 import CountryInfo from '@/components/CountryInfo'
 import { getCountryInfo } from '@/utils/countryUtils'
-import Script from "next/script";
+
 export const metadata: Metadata = {
   title: 'Singapore Phone Number Generator - Generate Random Singapore Phone Numbers',
   description: 'Generate random Singapore phone numbers with our free generator. Create mobile numbers with valid carrier prefixes and proper formats for Singapore.'

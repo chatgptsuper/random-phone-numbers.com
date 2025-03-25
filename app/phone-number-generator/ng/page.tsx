@@ -3,7 +3,7 @@ import ThemeController from '@/components/themeController'
 import MainGenerator from '@/components/mainGenerator'
 import CountryInfo from '@/components/CountryInfo'
 import { getCountryInfo } from '@/utils/countryUtils'
-import Script from "next/script";
+
 export const metadata: Metadata = {
   title: 'Nigeria Phone Number Generator - Generate Random Nigerian Phone Numbers',
   description: 'Nigeria Phone Number Generator. Generate random Nigerian phone number with valid area codes. Perfect for testing and development purposes.'

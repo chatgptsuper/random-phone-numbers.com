@@ -3,7 +3,7 @@ import ThemeController from "@/components/themeController";
 import MainGenerator from "@/components/mainGenerator";
 import CountryInfo from "@/components/CountryInfo";
 import { getCountryInfo } from "@/utils/countryUtils";
-import Script from "next/script";
+
 export const metadata: Metadata = {
   title: "US Phone Number Generator - Generate Random US Phone Number",
   description:

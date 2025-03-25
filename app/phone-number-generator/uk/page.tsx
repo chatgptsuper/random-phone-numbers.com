@@ -3,7 +3,7 @@ import ThemeController from '@/components/themeController'
 import MainGenerator from '@/components/mainGenerator'
 import CountryInfo from '@/components/CountryInfo'
 import { getCountryInfo } from '@/utils/countryUtils'
-import Script from "next/script";
+
 export const metadata: Metadata = {
   title: 'UK Phone Number Generator - Generate Random UK Phone Number',
   description: 'Free UK phone number generator. Generate random UK phone number with valid area codes. Perfect for testing and development purposes.'
