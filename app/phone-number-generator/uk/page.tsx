@@ -1,21 +1,22 @@
-import { Metadata } from 'next'
-import ThemeController from '@/components/themeController'
-import MainGenerator from '@/components/mainGenerator'
-import CountryInfo from '@/components/CountryInfo'
-import { getCountryInfo } from '@/utils/countryUtils'
+import { Metadata } from "next";
+import ThemeController from "@/components/themeController";
+import MainGenerator from "@/components/mainGenerator";
+import CountryInfo from "@/components/CountryInfo";
+import { getCountryInfo } from "@/utils/countryUtils";
 import Script from "next/script";
 export const metadata: Metadata = {
-  title: 'UK Phone Number Generator - Generate Random UK Phone Number',
-  description: 'Free UK phone number generator. Generate random UK phone number with valid area codes. Perfect for testing and development purposes.'
-}
+  title: "UK Phone Number Generator - Generate Random UK Phone Number",
+  description:
+    "Free UK phone number generator. Generate random UK phone number with valid area codes. Perfect for testing and development purposes.",
+};
 
 export default function UKPage() {
-  const country = getCountryInfo('uk')
+  const country = getCountryInfo("uk");
 
   return (
     <main className="min-h-screen w-full relative">
       <ThemeController />
-      
+
       {/* Hero Section */}
       <section className="py-12 bg-base-200">
         <div className="container mx-auto px-4">
@@ -23,15 +24,9 @@ export default function UKPage() {
             UK Phone Number Generator
           </h1>
           <p className="text-xl text-center text-base-content/80 max-w-2xl mx-auto">
-            Generate random British phone numbers with proper area codes and formats.
+            Generate random British phone numbers with proper area codes and
+            formats.
           </p>
-        </div>
-      </section>
-
-      {/* Generator Section */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <MainGenerator defaultCountry="UK" />
         </div>
       </section>
 
@@ -42,21 +37,30 @@ export default function UKPage() {
               async
               data-cfasync="false"
               src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
-              strategy="lazyOnload"
+              strategy="afterInteractive"
             />
-            <div id="container-e600160624986baf8eabc5850c18a018"></div>
+            <div
+              id="container-e600160624986baf8eabc5850c18a018"
+              className="w-full"
+            ></div>
           </div>
+        </div>
+      </section>
+      {/* Generator Section */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <MainGenerator defaultCountry="UK" />
         </div>
       </section>
 
       {/* Country Info Section */}
       <section className="py-12 bg-base-200">
         <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-semibold mb-8">
-            About UK Phone Numbers
-          </h2>
-          <CountryInfo country={country} />
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-semibold mb-8">
+              About UK Phone Numbers
+            </h2>
+            <CountryInfo country={country} />
           </div>
         </div>
       </section>
@@ -70,12 +74,18 @@ export default function UKPage() {
                 Understanding UK Phone Number Formats
               </h2>
               <p className="text-base-content/80 mb-4">
-                UK phone numbers follow different formats depending on their type:
+                UK phone numbers follow different formats depending on their
+                type:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-base-content/80">
-                <li>Mobile numbers start with &apos;07&apos; followed by 9 digits</li>
+                <li>
+                  Mobile numbers start with &apos;07&apos; followed by 9 digits
+                </li>
                 <li>London landlines start with &apos;020&apos;</li>
-                <li>Other geographic numbers start with &apos;01&apos; or &apos;02&apos;</li>
+                <li>
+                  Other geographic numbers start with &apos;01&apos; or
+                  &apos;02&apos;
+                </li>
                 <li>Non-geographic numbers use &apos;03&apos;</li>
                 <li>Premium rate services use &apos;09&apos;</li>
               </ul>
@@ -122,6 +132,23 @@ export default function UKPage() {
           </div>
         </div>
       </section>
+
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-center">
+            <Script
+              async
+              data-cfasync="false"
+              src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
+              strategy="afterInteractive"
+            />
+            <div
+              id="container-e600160624986baf8eabc5850c18a018"
+              className="w-full"
+            ></div>
+          </div>
+        </div>
+      </section>
     </main>
-  )
-} 
+  );
+}

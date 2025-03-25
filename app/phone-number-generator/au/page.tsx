@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title:
     "Australia Phone Number Generator - Generate Random Australian Phone Numbers",
   description:
-    "Australia Phone Number Generator. Create mobile and landline numbers with proper area codes for testing and development. Perfect for testing applications, databases, and CRM systems."
+    "Australia Phone Number Generator. Create mobile and landline numbers with proper area codes for testing and development. Perfect for testing applications, databases, and CRM systems.",
 };
 
 export default function AustraliaPage() {
@@ -31,13 +31,6 @@ export default function AustraliaPage() {
         </div>
       </section>
 
-      {/* Generator Section */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <MainGenerator defaultCountry="AU" />
-        </div>
-      </section>
-
       <section className="py-8">
         <div className="container mx-auto px-4">
           <div className="flex justify-center">
@@ -45,10 +38,20 @@ export default function AustraliaPage() {
               async
               data-cfasync="false"
               src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
-              strategy="lazyOnload"
+              strategy="afterInteractive"
             />
-            <div id="container-e600160624986baf8eabc5850c18a018"></div>
+            <div
+              id="container-e600160624986baf8eabc5850c18a018"
+              className="w-full"
+            ></div>
           </div>
+        </div>
+      </section>
+
+      {/* Generator Section */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <MainGenerator defaultCountry="AU" />
         </div>
       </section>
 
@@ -111,6 +114,24 @@ export default function AustraliaPage() {
           </div>
         </div>
       </section>
+
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-center">
+            <Script
+              async
+              data-cfasync="false"
+              src="//pl26170375.effectiveratecpm.com/e600160624986baf8eabc5850c18a018/invoke.js"
+              strategy="afterInteractive"
+            />
+            <div
+              id="container-e600160624986baf8eabc5850c18a018"
+              className="w-full"
+            ></div>
+          </div>
+        </div>
+      </section>
+      
     </main>
   );
 }
